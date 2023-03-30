@@ -18,21 +18,21 @@ import java.sql.ResultSet;
 import java.util.Objects;
 
 public class LoginController {
-
+    
+    // Loading FXML fx:ids
     @FXML
     private Label invalidCredLabelLogin;
     @FXML
-    private TextField emailFormLogin;
-    @FXML
-    private TextField passwordFormLogin;
+    private TextField emailFormLogin, passwordFormLogin;
     @FXML
     private Button loginButtonFormLogin;
 
-
+    //Gloabl Variables
     private Stage stage;
     private Scene scene;
     private Parent root;
 
+    //A function to go to Registration Form from Login Form
     public void toRegistrationForm ( ActionEvent event) throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("registration.fxml")));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -41,6 +41,7 @@ public class LoginController {
         stage.show();
     }
 
+    //A function to go to Landing Page from Login Form
     public void toLandingPage ( ActionEvent event) throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("landing.fxml")));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -49,7 +50,7 @@ public class LoginController {
         stage.show();
     }
 
-
+    //A function to go to Homepage from Login Form
     public void toHomePage () throws  IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("home.fxml"));
         HomeController.setCurrentUser ( emailFormLogin.getText());
@@ -60,6 +61,7 @@ public class LoginController {
     }
 
 
+    
     public void loginButtonSetOnAction() {
         if (!emailFormLogin.getText().isBlank() && !passwordFormLogin.getText().isBlank()) {
             validateLogin();
@@ -67,9 +69,9 @@ public class LoginController {
         else {
             emailFormLogin.setText("");
             passwordFormLogin.setText("");
-            invalidCredLabelLogin.setText("INVALID LOGIN CREDENTIALS!");
-            emailFormLogin.setStyle("-fx-border-style: solid inside;" + "-fx-border-width: 1;" + "-fx-border-color: red;");
-            passwordFormLogin.setStyle("-fx-border-style: solid inside;" + "-fx-border-width: 1;" + "-fx-border-color: red;");
+            invalidCredLabelLogin.setText("Invalid Login Credentials!");
+            emailFormLogin.setStyle("-fx-border-color: red;");
+            passwordFormLogin.setStyle("-fx-border-color: red;");
 
         }
     }
@@ -79,10 +81,9 @@ public class LoginController {
         try {
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
+        
 
-        String login_query = "SELECT * FROM users WHERE email = ? AND password = ?";
-
-            PreparedStatement statement = connectDB.prepareStatement(login_query);
+            PreparedStatement statement = connectDB.prepareStatement(DatabaseConnection.loginQuery);
             statement.setString(1, emailFormLogin.getText());
             statement.setString(2, passwordFormLogin.getText());
 
@@ -96,8 +97,8 @@ public class LoginController {
                 emailFormLogin.setText("");
                 passwordFormLogin.setText("");
                 invalidCredLabelLogin.setText("INVALID LOGIN CREDENTIALS!");
-                emailFormLogin.setStyle("-fx-border-style: solid inside;" + "-fx-border-width: 1;" + "-fx-border-color: red;");
-                passwordFormLogin.setStyle("-fx-border-style: solid inside;" + "-fx-border-width: 1;" + "-fx-border-color: red;");
+                emailFormLogin.setStyle("-fx-border-color: red;");
+                passwordFormLogin.setStyle("-fx-border-color: red;");
             }
 
             connectDB.close();

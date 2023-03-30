@@ -24,27 +24,12 @@ public class HomeController {
     boolean show = true;
 
     @FXML
-    private Pane changePwdBoxHome;
+    private Pane changePwdBoxHome, footerHome, navHome, exitApplicationBoxHome;
     @FXML
-    private Pane footerHome;
+    private PasswordField changePwdCurrentHome, changePwdNewHome, changePwdRewriteHome;
     @FXML
-    private Pane navHome;
-    @FXML
-    private PasswordField changePwdCurrentHome;
-    @FXML
-    private PasswordField changePwdNewHome;
-    @FXML
-    private PasswordField changePwdRewriteHome;
-    @FXML
-    private Label invalidLabelChangePwd;
-    @FXML
-    private Label validLabelChangePwd;
-    @FXML
-    private Pane exitApplicationBoxHome;
-
-
-
-
+    private Label invalidLabelChangePwd, validLabelChangePwd;
+    
     private static String currentUser;
     public static void setCurrentUser ( String string) {
         currentUser = string;
@@ -57,7 +42,6 @@ public class HomeController {
         stage.setScene(scene);
         stage.show();
     }
-
 
     public void showSettings () {
 
@@ -78,8 +62,10 @@ public class HomeController {
         } else {
             changePwdBoxHome.setVisible(false);
             exitApplicationBoxHome.setVisible(false);
+            navHome.setDisable(false);
             validLabelChangePwd.setText("");
             setFieldsColor ("none");
+            
             DropShadow shadow = new DropShadow();
             shadow.setWidth(36);
             shadow.setHeight(35);
@@ -88,7 +74,6 @@ public class HomeController {
             shadow.setWidth(5);
             shadow.setHeight(15);
             navHome.setEffect(shadow);
-            navHome.setDisable(false);
 
             show = true;
         }
@@ -98,13 +83,13 @@ public class HomeController {
         Platform.exit();
     }
 
-    public void setFieldsColor ( String color) {
-        changePwdCurrentHome.setStyle("-fx-border-style: solid inside;" + "-fx-border-width: 1;" + "-fx-border-color: "+ color +";");
-        changePwdNewHome.setStyle("-fx-border-style: solid inside;" + "-fx-border-width: 1;" + "-fx-border-color: "+ color+ ";");
-        changePwdRewriteHome.setStyle("-fx-border-style: solid inside;" + "-fx-border-width: 1;" + "-fx-border-color: "+ color +";");
+    private void setFieldsColor ( String color) {
+        changePwdCurrentHome.setStyle("-fx-border-color: "+ color +";");
+        changePwdNewHome.setStyle("-fx-border-color: "+ color+ ";");
+        changePwdRewriteHome.setStyle("-fx-border-color: "+ color +";");
     }
 
-    public void setFieldsEmpty () {
+    private void setFieldsEmpty () {
         validLabelChangePwd.setText("");
         changePwdCurrentHome.setText("");
         changePwdNewHome.setText("");
@@ -146,9 +131,9 @@ public class HomeController {
             DatabaseConnection connectNow = new DatabaseConnection();
             Connection connectDB = connectNow.getConnection();
 
-            String updateQuery = "UPDATE users SET password = ? WHERE email = ? AND password = ?";
+            
 
-            PreparedStatement statement = connectDB.prepareStatement(updateQuery);
+            PreparedStatement statement = connectDB.prepareStatement(DatabaseConnection.updateQuery );
             statement.setString(1, changePwdNewHome.getText());
             statement.setString(2, currentUser );
             statement.setString(3, changePwdCurrentHome.getText());

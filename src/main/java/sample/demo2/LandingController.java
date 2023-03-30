@@ -55,7 +55,7 @@ public class LandingController {
             DropShadow shadow = new DropShadow();
             shadow.setWidth(36);
             shadow.setHeight(35);
-            shadow.setColor( Color.color(0,0,0,0.72));
+            shadow.setColor( Color.color(0,0,0,0.5));
             footerLand.setEffect(shadow);
             shadow.setWidth(5);
             shadow.setHeight(15);
