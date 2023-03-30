@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="649.0" minWidth="845.0" prefHeight="649.0" prefWidth="845.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.demo2.LoginController">
+   <children>
+      <ImageView fitHeight="521.0" fitWidth="521.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/TopLeftCircleBackground.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="427.0" fitWidth="845.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/BottomRightCircleBackground.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="387.0" fitWidth="503.0" layoutX="119.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/MidCricleBackground.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="387.0" fitWidth="410.0" layoutX="491.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/LoginFrontImage.png" />
+         </image>
+         <effect>
+            <DropShadow height="73.02" offsetX="6.0" offsetY="10.0" radius="33.995" width="64.96" />
+         </effect>
+      </ImageView>
+      <Pane layoutX="16.0" layoutY="9.0" prefHeight="65.0" prefWidth="813.0" style="-fx-background-color: #1f93ff; -fx-background-radius: 10;">
+         <effect>
+            <DropShadow height="34.19" radius="16.9625" width="35.66">
+               <color>
+                  <Color opacity="0.7175572514533997" />
+               </color>
+            </DropShadow>
+         </effect>
+         <children>
+            <ImageView fx:id="logo" accessibleRole="BUTTON" fitHeight="65.0" fitWidth="68.0" layoutX="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/RAULogo.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Button fx:id="login_button_nav_login" layoutX="560.0" layoutY="14.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="106.0" style="-fx-background-color: #fff; -fx-cursor: hand;" text="LOGIN" textAlignment="CENTER" textFill="#001973">
+               <font>
+                  <Font name="Leelawadee Bold" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.48473283648490906" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Button>
+            <Button fx:id="register_button_nav_login" layoutX="685.0" layoutY="14.0" mnemonicParsing="false" onAction="#toRegistrationForm" prefHeight="32.0" prefWidth="106.0" style="-fx-background-color: #fff; -fx-cursor: Hand;" text="REGISTER" textAlignment="CENTER" textFill="#001973">
+               <font>
+                  <Font name="Leelawadee Bold" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.48473283648490906" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Button>
+            <Hyperlink accessibleRole="BUTTON" layoutX="222.0" layoutY="18.0" onAction="#toLandingPage" text="HOME" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Leelawadee Bold" size="17.0" />
+               </font>
+            </Hyperlink>
+            <Hyperlink accessibleRole="BUTTON" layoutX="295.0" layoutY="18.0" text="SERVICES" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Leelawadee Bold" size="17.0" />
+               </font>
+            </Hyperlink>
+            <Hyperlink accessibleRole="BUTTON" layoutX="394.0" layoutY="18.0" text="ABOUT" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Leelawadee Bold" size="17.0" />
+               </font>
+            </Hyperlink>
+         </children>
+      </Pane>
+      <Pane layoutX="46.0" layoutY="186.0" prefHeight="300.0" prefWidth="430.0" style="-fx-background-color: #b9c9fc; -fx-background-radius: 12;">
+         <effect>
+            <DropShadow height="50.0" radius="24.5" width="50.0">
+               <color>
+                  <Color opacity="0.7200000286102295" />
+               </color>
+            </DropShadow>
+         </effect>
+         <children>
+            <ImageView fitHeight="43.0" fitWidth="43.0" layoutX="194.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/LoginFormLogo.png" />
+               </image>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" height="23.74" offsetY="-1.0" radius="25.34" spread="0.52" width="79.62">
+                     <color>
+                        <Color opacity="0.18702289462089539" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </ImageView>
+            <TextField fx:id="emailFormLogin" layoutX="58.0" layoutY="61.0" prefHeight="43.0" prefWidth="300.0" promptText="Email Address">
+               <effect>
+                  <DropShadow height="23.93" radius="10.7325">
+                     <color>
+                        <Color opacity="0.4694656431674957" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <font>
+                  <Font name="Leelawadee Bold" size="15.0" />
+               </font>
+            </TextField>
+            <PasswordField fx:id="passwordFormLogin" layoutX="58.0" layoutY="127.0" prefHeight="43.0" prefWidth="300.0" promptText="Password">
+               <font>
+                  <Font name="Leelawadee Bold" size="15.0" />
+               </font>
+               <effect>
+                  <DropShadow height="23.93" radius="10.7325">
+                     <color>
+                        <Color opacity="0.4694656431674957" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </PasswordField>
+            <Button fx:id="loginButtonFormLogin" layoutX="137.0" layoutY="226.0" mnemonicParsing="false" onAction="#loginButtonSetOnAction" prefHeight="43.0" prefWidth="157.0" style="-fx-background-color: #1e90ff; -fx-cursor: hand;" text="LOGIN" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Leelawadee Bold" size="19.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.6717557311058044" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Button>
+            <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="322.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/EmailLogo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="324.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/LockLogo.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="invalidCredLabelLogin" layoutY="188.0" prefHeight="19.0" prefWidth="430.0" style="-fx-alignment: center;" textAlignment="CENTER" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutY="605.0" prefHeight="43.0" prefWidth="845.0" style="-fx-background-color: WHITE;">
+         <effect>
+            <DropShadow height="10.38" radius="3.5600000000000005" width="5.86">
+               <color>
+                  <Color opacity="0.5648854970932007" />
+               </color>
+            </DropShadow>
+         </effect>
+         <children>
+            <Label layoutX="29.0" layoutY="11.0" text="© 2023 RAU Hospitals. All rights reserved." textFill="#4070ff">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="468.0" layoutY="13.0" text="Make Appointment             desk@rau.com           042 444 777 333" textFill="#5d6179">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="583.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/EmailLogo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="34.0" fitWidth="30.0" layoutX="704.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/PhoneLogo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
