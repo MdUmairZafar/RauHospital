@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="779.0" prefWidth="1073.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.demo2.DoctorHomeController">
+   <children>
+      <Pane prefHeight="781.0" prefWidth="1074.0">
+         <children>
+            <ImageView fitHeight="725.0" fitWidth="807.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/TopLeftCircleBackground.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="542.0" fitWidth="1083.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/BottomRightCircleBackground.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="542.0" fitWidth="778.0" layoutX="119.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/MidCricleBackground.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="navLand" layoutX="16.0" layoutY="9.0" prefHeight="65.0" prefWidth="1038.0" style="-fx-background-color: #1f93ff; -fx-background-radius: 10;">
+         <effect>
+            <DropShadow height="34.92" radius="17.145" width="35.66">
+               <color>
+                  <Color opacity="0.5" />
+               </color>
+            </DropShadow>
+         </effect>
+         <children>
+            <ImageView fx:id="logo" accessibleRole="BUTTON" fitHeight="65.0" fitWidth="68.0" layoutX="55.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/RAULogo.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Button fx:id="login_button_nav_land" layoutX="771.0" layoutY="14.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="106.0" style="-fx-background-color: #fff; -fx-cursor: hand;" text="LOGIN" textAlignment="CENTER" textFill="#001973">
+               <font>
+                  <Font name="Leelawadee Bold" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow height="6.34" radius="4.1375" width="12.21">
+                     <color>
+                        <Color opacity="0.5" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Button>
+            <Button fx:id="register_button_nav_land" layoutX="896.0" layoutY="14.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="106.0" style="-fx-background-color: #fff; -fx-cursor: Hand;" text="REGISTER" textAlignment="CENTER" textFill="#001973">
+               <font>
+                  <Font name="Leelawadee Bold" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow height="6.34" radius="4.1375" width="12.21">
+                     <color>
+                        <Color opacity="0.5" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Button>
+            <Hyperlink accessibleRole="BUTTON" layoutX="310.0" layoutY="18.0" text="HOME" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Leelawadee Bold" size="17.0" />
+               </font>
+            </Hyperlink>
+            <Hyperlink accessibleRole="BUTTON" layoutX="405.0" layoutY="18.0" text="SERVICES" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Leelawadee Bold" size="17.0" />
+               </font>
+            </Hyperlink>
+            <Hyperlink accessibleRole="BUTTON" layoutX="517.0" layoutY="18.0" text="ABOUT" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Leelawadee Bold" size="17.0" />
+               </font>
+            </Hyperlink>
+         </children>
+      </Pane>
+      <Pane layoutX="103.0" layoutY="132.0" prefHeight="123.0" prefWidth="857.0" style="-fx-background-radius: 10;" styleClass="datatable-background" stylesheets="@css/style.css">
+         <children>
+            <Line endX="753.0" layoutX="102.0" layoutY="61.0" startX="-100.0" stroke="#3962dd8a" strokeWidth="2.0" />
+            <Label alignment="CENTER_RIGHT" layoutX="43.0" layoutY="15.0" prefHeight="25.0" prefWidth="68.0" text="Name" textAlignment="RIGHT" textFill="#001973">
+               <font>
+                  <Font name="Dubai Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="271.0" layoutY="16.0" prefHeight="25.0" prefWidth="60.0" text="CNIC" textAlignment="CENTER" textFill="#001973">
+               <font>
+                  <Font name="Dubai Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="527.0" layoutY="16.0" prefHeight="25.0" prefWidth="106.0" text="Department" textAlignment="CENTER" textFill="#001973">
+               <font>
+                  <Font name="Dubai Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="7.0" layoutY="76.0" prefHeight="23.0" prefWidth="79.0" text="Email" textAlignment="CENTER" textFill="#001973">
+               <font>
+                  <Font name="Dubai Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="374.0" layoutY="75.0" prefHeight="23.0" prefWidth="133.0" text="Phone Number" textAlignment="CENTER" textFill="#001d73">
+               <font>
+                  <Font name="Dubai Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="666.0" layoutY="76.0" prefHeight="23.0" prefWidth="57.0" text="ID" textAlignment="CENTER" textFill="#001973">
+               <font>
+                  <Font name="Dubai Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="124.0" layoutY="19.0" prefHeight="25.0" prefWidth="106.0" text="Umair Zafar" textFill="#001973">
+               <font>
+                  <Font name="Leelawadee" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="348.0" layoutY="19.0" prefHeight="25.0" prefWidth="123.0" text="3120589748459" textAlignment="CENTER" textFill="#001973">
+               <font>
+                  <Font name="Leelawadee" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="648.0" layoutY="19.0" prefHeight="25.0" prefWidth="204.0" text="Cardiology" textAlignment="CENTER" textFill="#001973">
+               <font>
+                  <Font name="Leelawadee" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="101.0" layoutY="81.0" prefHeight="21.0" prefWidth="258.0" text="umair@gmail.com" textFill="#001973">
+               <font>
+                  <Font name="Leelawadee" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="527.0" layoutY="81.0" prefHeight="21.0" prefWidth="110.0" text="03402747552" textAlignment="CENTER" textFill="#001973">
+               <font>
+                  <Font name="Leelawadee" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="737.0" layoutY="81.0" prefHeight="21.0" prefWidth="116.0" text="DOC001" textAlignment="CENTER" textFill="#001973">
+               <font>
+                  <Font name="Leelawadee" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="103.0" layoutY="311.0" prefHeight="370.0" prefWidth="857.0" styleClass="transparent">
+         <children>
+            <HBox alignment="CENTER_LEFT" layoutX="1.0" prefHeight="43.0" prefWidth="855.0" styleClass="datatable-background">
+               <children>
+                  <Label alignment="TOP_CENTER" prefHeight="23.0" prefWidth="58.0" text="Sr. #" textAlignment="CENTER" textFill="#001973">
+                     <font>
+                        <Font name="Dubai Bold" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Label alignment="TOP_CENTER" prefHeight="23.0" prefWidth="152.0" text="Patient Name" textAlignment="CENTER" textFill="#001973">
+                     <font>
+                        <Font name="Dubai Bold" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Label alignment="TOP_CENTER" prefHeight="23.0" prefWidth="105.0" text="Visit Date" textAlignment="CENTER" textFill="#001973">
+                     <font>
+                        <Font name="Dubai Bold" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Label alignment="TOP_CENTER" prefHeight="23.0" prefWidth="111.0" text="Visit Time" textAlignment="CENTER" textFill="#001973">
+                     <font>
+                        <Font name="Dubai Bold" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Label alignment="TOP_CENTER" prefHeight="23.0" prefWidth="435.0" text="Prescription" textFill="#001973">
+                     <font>
+                        <Font name="Dubai Bold" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <VBox alignment="TOP_CENTER" layoutY="40.0" prefHeight="330.0" prefWidth="857.0" styleClass="transparent">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0" styleClass="transparent" VBox.vgrow="ALWAYS">
+                     <children>
+                        <ScrollPane hbarPolicy="NEVER" prefHeight="370.0" prefWidth="861.0" styleClass="transparent">
+                           <content>
+                              <VBox fx:id="appointmentTable" prefHeight="328.0" prefWidth="855.0" style="-fx-background-color: #577CFF77;" styleClass="datatable-background" />
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Line endX="-100.0" endY="439.0" layoutX="526.0" layoutY="-72.0" startX="-100.0" startY="73.0" stroke="#3962dd8a" strokeWidth="2.0" />
+            <Line endX="-100.0" endY="441.0" layoutX="416.0" layoutY="-74.0" startX="-100.0" startY="75.0" stroke="#3962dd8a" strokeWidth="2.0" />
+            <Line endX="-100.0" endY="441.0" layoutX="307.0" layoutY="-74.0" startX="-100.0" startY="75.0" stroke="#3962dd8a" strokeWidth="2.0" />
+            <Line endX="-100.0" endY="441.0" layoutX="160.0" layoutY="-74.0" startX="-100.0" startY="75.0" stroke="#3962dd8a" strokeWidth="2.0" />
+            <Line endX="752.0" layoutX="102.0" layoutY="39.0" startX="-100.0" stroke="#001973" strokeWidth="3.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

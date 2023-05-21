@@ -52,9 +52,11 @@ public class LoginController {
 
     //A function to go to Homepage from Login Form
     public void toHomePage () throws  IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("home.fxml"));
-        HomeController.setCurrentUser ( emailFormLogin.getText());
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("patientHome.fxml"));
         root = loader.load();
+        PatientHomeController home = loader.getController();
+        home.setCurrentUser ( emailFormLogin.getText());
+        home.initiatePage();
         scene = new Scene(root);
         stage = (Stage) loginButtonFormLogin.getScene().getWindow();
         stage.setScene(scene);

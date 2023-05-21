@@ -41,7 +41,7 @@
             </DropShadow>
          </effect>
          <children>
-            <ImageView fx:id="logo" accessibleRole="BUTTON" fitHeight="65.0" fitWidth="68.0" layoutX="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="logo" accessibleRole="BUTTON" fitHeight="65.0" fitWidth="68.0" layoutX="55.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/RAULogo.png" />
                </image>
