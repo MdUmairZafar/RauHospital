@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -31,14 +32,24 @@
                   <Image url="@Images/BottomRightCircleBackground.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="542.0" fitWidth="778.0" layoutX="119.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="542.0" fitWidth="778.0" layoutX="149.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/MidCricleBackground.png" />
                </image>
             </ImageView>
+            <Button layoutX="408.0" layoutY="704.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="258.0" styleClass="blue-btn" text="View All Appointments" textFill="WHITE">
+               <font>
+                  <Font name="Leelawadee Bold" size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="419.0" layoutY="263.0" text="Latest Appointments" textFill="#001d73">
+               <font>
+                  <Font name="Leelawadee Bold" size="24.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
-      <Pane fx:id="navLand" layoutX="16.0" layoutY="9.0" prefHeight="65.0" prefWidth="1038.0" style="-fx-background-color: #1f93ff; -fx-background-radius: 10;">
+      <Pane fx:id="navLand" layoutX="16.0" layoutY="9.0" prefHeight="65.0" prefWidth="1038.0" style="-fx-background-color: #577CFF; -fx-background-radius: 10;">
          <effect>
             <DropShadow height="34.92" radius="17.145" width="35.66">
                <color>
@@ -55,22 +66,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
-            <Button fx:id="login_button_nav_land" layoutX="771.0" layoutY="14.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="106.0" style="-fx-background-color: #fff; -fx-cursor: hand;" text="LOGIN" textAlignment="CENTER" textFill="#001973">
-               <font>
-                  <Font name="Leelawadee Bold" size="17.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <effect>
-                  <DropShadow height="6.34" radius="4.1375" width="12.21">
-                     <color>
-                        <Color opacity="0.5" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Button>
-            <Button fx:id="register_button_nav_land" layoutX="896.0" layoutY="14.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="106.0" style="-fx-background-color: #fff; -fx-cursor: Hand;" text="REGISTER" textAlignment="CENTER" textFill="#001973">
+            <Button fx:id="register_button_nav_land" layoutX="896.0" layoutY="14.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="106.0" style="-fx-background-color: #fff; -fx-cursor: Hand;" text="Logout" textAlignment="CENTER" textFill="#001973">
                <font>
                   <Font name="Leelawadee Bold" size="17.0" />
                </font>
@@ -102,7 +98,7 @@
             </Hyperlink>
          </children>
       </Pane>
-      <Pane layoutX="103.0" layoutY="132.0" prefHeight="123.0" prefWidth="857.0" style="-fx-background-radius: 10;" styleClass="datatable-background" stylesheets="@css/style.css">
+      <Pane layoutX="103.0" layoutY="119.0" prefHeight="123.0" prefWidth="857.0" style="-fx-background-radius: 10;" styleClass="datatable-background" stylesheets="@css/style.css">
          <children>
             <Line endX="753.0" layoutX="102.0" layoutY="61.0" startX="-100.0" stroke="#3962dd8a" strokeWidth="2.0" />
             <Label alignment="CENTER_RIGHT" layoutX="43.0" layoutY="15.0" prefHeight="25.0" prefWidth="68.0" text="Name" textAlignment="RIGHT" textFill="#001973">
@@ -135,41 +131,48 @@
                   <Font name="Dubai Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="124.0" layoutY="19.0" prefHeight="25.0" prefWidth="106.0" text="Umair Zafar" textFill="#001973">
+            <Label fx:id="name" layoutX="124.0" layoutY="19.0" prefHeight="25.0" prefWidth="106.0" textFill="#001973">
                <font>
                   <Font name="Leelawadee" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="348.0" layoutY="19.0" prefHeight="25.0" prefWidth="123.0" text="3120589748459" textAlignment="CENTER" textFill="#001973">
+            <Label fx:id="cnic" layoutX="348.0" layoutY="19.0" prefHeight="25.0" prefWidth="123.0" textAlignment="CENTER" textFill="#001973">
                <font>
                   <Font name="Leelawadee" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="648.0" layoutY="19.0" prefHeight="25.0" prefWidth="204.0" text="Cardiology" textAlignment="CENTER" textFill="#001973">
+            <Label fx:id="department" layoutX="648.0" layoutY="19.0" prefHeight="25.0" prefWidth="204.0" textAlignment="CENTER" textFill="#001973">
                <font>
                   <Font name="Leelawadee" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="101.0" layoutY="81.0" prefHeight="21.0" prefWidth="258.0" text="umair@gmail.com" textFill="#001973">
+            <Label fx:id="email" layoutX="101.0" layoutY="81.0" prefHeight="21.0" prefWidth="258.0" textFill="#001973">
                <font>
                   <Font name="Leelawadee" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="527.0" layoutY="81.0" prefHeight="21.0" prefWidth="110.0" text="03402747552" textAlignment="CENTER" textFill="#001973">
+            <Label fx:id="phone" layoutX="527.0" layoutY="81.0" prefHeight="21.0" prefWidth="110.0" textAlignment="CENTER" textFill="#001973">
                <font>
                   <Font name="Leelawadee" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="737.0" layoutY="81.0" prefHeight="21.0" prefWidth="116.0" text="DOC001" textAlignment="CENTER" textFill="#001973">
+            <Label fx:id="id" layoutX="737.0" layoutY="81.0" prefHeight="21.0" prefWidth="116.0" textAlignment="CENTER" textFill="#001973">
                <font>
                   <Font name="Leelawadee" size="15.0" />
                </font>
             </Label>
          </children>
+         <effect>
+            <DropShadow height="45.0" radius="22.0" width="45.0">
+               <color>
+                  <Color opacity="0.25" />
+               </color>
+            </DropShadow>
+         </effect>
       </Pane>
-      <Pane layoutX="103.0" layoutY="311.0" prefHeight="370.0" prefWidth="857.0" styleClass="transparent">
+      <Pane layoutX="103.0" layoutY="318.0" prefHeight="370.0" prefWidth="857.0">
          <children>
-            <HBox alignment="CENTER_LEFT" layoutX="1.0" prefHeight="43.0" prefWidth="855.0" styleClass="datatable-background">
+            <HBox alignment="CENTER_LEFT" layoutX="1.0" prefHeight="43.0" prefWidth="855.0">
                <children>
                   <Label alignment="TOP_CENTER" prefHeight="23.0" prefWidth="58.0" text="Sr. #" textAlignment="CENTER" textFill="#001973">
                      <font>
@@ -212,19 +215,39 @@
                      </HBox.margin>
                   </Label>
                </children>
+               <styleClass>
+                  <String fx:value="datatable-background" />
+                  <String fx:value="rad-btn-2" />
+               </styleClass>
             </HBox>
-            <VBox alignment="TOP_CENTER" layoutY="40.0" prefHeight="330.0" prefWidth="857.0" styleClass="transparent">
+            <VBox alignment="TOP_CENTER" layoutY="40.0" prefHeight="330.0" prefWidth="857.0">
                <children>
-                  <HBox prefHeight="100.0" prefWidth="200.0" styleClass="transparent" VBox.vgrow="ALWAYS">
+                  <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <ScrollPane hbarPolicy="NEVER" prefHeight="370.0" prefWidth="861.0" styleClass="transparent">
+                        <ScrollPane hbarPolicy="NEVER" prefHeight="370.0" prefWidth="861.0">
                            <content>
-                              <VBox fx:id="appointmentTable" prefHeight="328.0" prefWidth="855.0" style="-fx-background-color: #577CFF77;" styleClass="datatable-background" />
+                              <VBox fx:id="appointmentTable" prefHeight="328.0" prefWidth="855.0" style="-fx-background-color: #b9c9fc;">
+                                 <styleClass>
+                                    <String fx:value="datatable-background" />
+                                    <String fx:value="datatable-background" />
+                                 </styleClass></VBox>
                            </content>
+                           <styleClass>
+                              <String fx:value="transparent" />
+                              <String fx:value="rad-btn-2" />
+                           </styleClass>
                         </ScrollPane>
                      </children>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="rad-btn-2" />
+                     </styleClass>
                   </HBox>
                </children>
+               <styleClass>
+                  <String fx:value="transparent" />
+                  <String fx:value="rad-btn-2" />
+               </styleClass>
             </VBox>
             <Line endX="-100.0" endY="439.0" layoutX="526.0" layoutY="-72.0" startX="-100.0" startY="73.0" stroke="#3962dd8a" strokeWidth="2.0" />
             <Line endX="-100.0" endY="441.0" layoutX="416.0" layoutY="-74.0" startX="-100.0" startY="75.0" stroke="#3962dd8a" strokeWidth="2.0" />
@@ -232,6 +255,17 @@
             <Line endX="-100.0" endY="441.0" layoutX="160.0" layoutY="-74.0" startX="-100.0" startY="75.0" stroke="#3962dd8a" strokeWidth="2.0" />
             <Line endX="752.0" layoutX="102.0" layoutY="39.0" startX="-100.0" stroke="#001973" strokeWidth="3.0" />
          </children>
+         <effect>
+            <DropShadow height="45.0" radius="22.0" width="45.0">
+               <color>
+                  <Color opacity="0.25" />
+               </color>
+            </DropShadow>
+         </effect>
+         <styleClass>
+            <String fx:value="datatable-background" />
+            <String fx:value="rad-btn-2" />
+         </styleClass>
       </Pane>
    </children>
 </AnchorPane>

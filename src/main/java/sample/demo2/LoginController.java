@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Objects;
 
 public class LoginController {
@@ -51,12 +52,11 @@ public class LoginController {
     }
 
     //A function to go to Homepage from Login Form
-    public void toHomePage () throws  IOException {
+    public void toHomePage () throws IOException, SQLException {
+        PatientHomeController.setUserEmail (emailFormLogin.getText());
         FXMLLoader loader = new FXMLLoader(getClass().getResource("patientHome.fxml"));
         root = loader.load();
         PatientHomeController home = loader.getController();
-        home.setCurrentUser ( emailFormLogin.getText());
-        home.initiatePage();
         scene = new Scene(root);
         stage = (Stage) loginButtonFormLogin.getScene().getWindow();
         stage.setScene(scene);
