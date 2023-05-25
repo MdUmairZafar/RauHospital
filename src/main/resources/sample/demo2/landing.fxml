@@ -30,7 +30,7 @@
             <Image url="@Images/MidCricleBackground.png" />
          </image>
       </ImageView>
-      <Pane fx:id="navLand" layoutX="16.0" layoutY="9.0" prefHeight="65.0" prefWidth="1038.0" style="-fx-background-color: #1f93ff; -fx-background-radius: 10;">
+      <Pane fx:id="navLand" layoutX="16.0" layoutY="9.0" prefHeight="65.0" prefWidth="1038.0" style="-fx-background-color: #577CFF; -fx-background-radius: 10;">
          <effect>
             <DropShadow height="34.92" radius="17.145" width="35.66">
                <color>
@@ -137,7 +137,7 @@
             </ImageView>
             <Line endX="214.0" layoutX="263.0" layoutY="350.0" startX="-100.0" stroke="#001973" />
             <Line endX="214.0" layoutX="263.0" layoutY="274.0" startX="-100.0" stroke="#001973" />
-            <Pane layoutX="63.0" layoutY="412.0" prefHeight="206.0" prefWidth="945.0" style="-fx-background-color: #1f93ff; -fx-background-radius: 10;">
+            <Pane layoutX="63.0" layoutY="412.0" prefHeight="206.0" prefWidth="945.0" style="-fx-background-color: #577CFF; -fx-background-radius: 10;">
                <effect>
                   <DropShadow height="50.32" radius="25.3925" width="53.25">
                      <color>
