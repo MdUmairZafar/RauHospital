@@ -66,7 +66,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
-            <Button fx:id="register_button_nav_land" layoutX="896.0" layoutY="14.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="106.0" style="-fx-background-color: #fff; -fx-cursor: Hand;" text="Logout" textAlignment="CENTER" textFill="#001973">
+            <Button layoutX="896.0" layoutY="14.0" mnemonicParsing="false" onAction="#toLandingPage" prefHeight="32.0" prefWidth="106.0" style="-fx-background-color: #fff; -fx-cursor: Hand;" text="Logout" textAlignment="CENTER" textFill="#001973">
                <font>
                   <Font name="Leelawadee Bold" size="17.0" />
                </font>

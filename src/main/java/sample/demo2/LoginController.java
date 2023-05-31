@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -27,6 +28,8 @@ public class LoginController {
     private TextField emailFormLogin, passwordFormLogin;
     @FXML
     private Button loginButtonFormLogin;
+    @FXML
+    private CheckBox patientCheckBox, doctorCheckBox, adminCheckBox;
 
     //Gloabl Variables
     private Stage stage;
@@ -52,8 +55,8 @@ public class LoginController {
     }
 
     //A function to go to Homepage from Login Form
-    public void toHomePage () throws IOException, SQLException {
-        PatientHomeController.setUserEmail (emailFormLogin.getText());
+    public void toPatientHomePage () throws IOException, SQLException {
+        DatabaseConnection.user = emailFormLogin.getText ();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("patientHome.fxml"));
         root = loader.load();
         PatientHomeController home = loader.getController();
@@ -61,16 +64,60 @@ public class LoginController {
         stage = (Stage) loginButtonFormLogin.getScene().getWindow();
         stage.setScene(scene);
     }
-
+    
+    public void toDoctorHomePage () throws IOException, SQLException {
+        DatabaseConnection.user = emailFormLogin.getText ();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("doctorHome.fxml"));
+        root = loader.load();
+        DoctorHomeController home = loader.getController();
+        scene = new Scene(root);
+        stage = (Stage) loginButtonFormLogin.getScene().getWindow();
+        stage.setScene(scene);
+    }
+    
+    public void toAdminHomePage () throws IOException, SQLException {
+        DatabaseConnection.user = emailFormLogin.getText ();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("adminHome.fxml"));
+        root = loader.load();
+        AdminHomeController home = loader.getController();
+        scene = new Scene(root);
+        stage = (Stage) loginButtonFormLogin.getScene().getWindow();
+        stage.setScene(scene);
+    }
+    
+    private void setFieldsEmpty () {
+        emailFormLogin.setText("");
+        passwordFormLogin.setText("");
+        setCheckBoxesEmpty ();
+    }
+    
+    private void setCheckBoxesEmpty () {
+        patientCheckBox.setSelected ( false );
+        doctorCheckBox.setSelected ( false );
+        adminCheckBox.setSelected ( false );
+    }
 
     
     public void loginButtonSetOnAction() {
         if (!emailFormLogin.getText().isBlank() && !passwordFormLogin.getText().isBlank()) {
-            validateLogin();
+            
+            if (patientCheckBox.isSelected () && !doctorCheckBox.isSelected () && !adminCheckBox.isSelected ()) {
+                validatePatientLogin ();
+            }
+            else if (!patientCheckBox.isSelected () && doctorCheckBox.isSelected () && !adminCheckBox.isSelected ()) {
+                validateDoctorLogin ();
+            }
+            else if (!patientCheckBox.isSelected () && !doctorCheckBox.isSelected () && adminCheckBox.isSelected ()) {
+                validateAdminLogin ();
+            }
+            else {
+                invalidCredLabelLogin.setText ( "Please Choose a Single Checkbox!" );
+                setCheckBoxesEmpty ();
+            }
+            
         }
         else {
-            emailFormLogin.setText("");
-            passwordFormLogin.setText("");
+            setFieldsEmpty ();
             invalidCredLabelLogin.setText("Invalid Login Credentials!");
             emailFormLogin.setStyle("-fx-border-color: red;");
             passwordFormLogin.setStyle("-fx-border-color: red;");
@@ -79,13 +126,13 @@ public class LoginController {
     }
     
 
-    public void validateLogin() {
+    public void validatePatientLogin () {
         try {
-        DatabaseConnection connectNow = new DatabaseConnection();
+        DatabaseConnection connectNow = DatabaseConnection.getInstance ();
         Connection connectDB = connectNow.getConnection();
         
 
-            PreparedStatement statement = connectDB.prepareStatement(DatabaseConnection.loginQuery);
+            PreparedStatement statement = connectDB.prepareStatement(DatabaseConnection.patientLoginQuery );
             statement.setString(1, emailFormLogin.getText());
             statement.setString(2, passwordFormLogin.getText());
 
@@ -93,11 +140,10 @@ public class LoginController {
 
             if(queryResult.next()) {
                 invalidCredLabelLogin.setText("");
-                toHomePage ();
+                toPatientHomePage ();
 
             } else {
-                emailFormLogin.setText("");
-                passwordFormLogin.setText("");
+                setFieldsEmpty ();
                 invalidCredLabelLogin.setText("INVALID LOGIN CREDENTIALS!");
                 emailFormLogin.setStyle("-fx-border-color: red;");
                 passwordFormLogin.setStyle("-fx-border-color: red;");
@@ -109,5 +155,66 @@ public class LoginController {
             e.getCause();
         }
     }
+    
+    public void validateDoctorLogin () {
+        try {
+            DatabaseConnection connectNow = DatabaseConnection.getInstance ();
+            Connection connectDB = connectNow.getConnection();
+            
+            
+            PreparedStatement statement = connectDB.prepareStatement(DatabaseConnection.doctorLoginQuery );
+            statement.setString(1, emailFormLogin.getText());
+            statement.setString(2, passwordFormLogin.getText());
+            
+            ResultSet queryResult = statement.executeQuery();
+            
+            if(queryResult.next()) {
+                invalidCredLabelLogin.setText("");
+                toDoctorHomePage ();
+                
+            } else {
+                setFieldsEmpty ();
+                invalidCredLabelLogin.setText("INVALID LOGIN CREDENTIALS!");
+                emailFormLogin.setStyle("-fx-border-color: red;");
+                passwordFormLogin.setStyle("-fx-border-color: red;");
+            }
+            
+            connectDB.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
+    
+    public void validateAdminLogin () {
+        try {
+            DatabaseConnection connectNow = DatabaseConnection.getInstance ();
+            Connection connectDB = connectNow.getConnection();
+            
+            
+            PreparedStatement statement = connectDB.prepareStatement(DatabaseConnection.adminLoginQuery );
+            statement.setString(1, emailFormLogin.getText());
+            statement.setString(2, passwordFormLogin.getText());
+            
+            ResultSet queryResult = statement.executeQuery();
+            
+            if(queryResult.next()) {
+                invalidCredLabelLogin.setText("");
+                toAdminHomePage ();
+                
+            } else {
+                setFieldsEmpty ();
+                invalidCredLabelLogin.setText("INVALID LOGIN CREDENTIALS!");
+                emailFormLogin.setStyle("-fx-border-color: red;");
+                passwordFormLogin.setStyle("-fx-border-color: red;");
+            }
+            
+            connectDB.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
+    
 
 }

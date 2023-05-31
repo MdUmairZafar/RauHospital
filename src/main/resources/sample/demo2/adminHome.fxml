@@ -2,7 +2,6 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -11,26 +10,11 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="779.0" prefWidth="1073.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.demo2.AdminHomeController">
+<AnchorPane prefHeight="779.0" prefWidth="1073.0" styleClass="bg-white" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.demo2.AdminHomeController">
    <children>
       <Pane prefHeight="781.0" prefWidth="1074.0">
          <children>
-            <ImageView fitHeight="725.0" fitWidth="807.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/TopLeftCircleBackground.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="542.0" fitWidth="1083.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/BottomRightCircleBackground.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="542.0" fitWidth="778.0" layoutX="149.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/MidCricleBackground.png" />
-               </image>
-            </ImageView>
-            <Button alignment="CENTER" layoutX="155.0" layoutY="167.0" mnemonicParsing="false" onAction="#toAdminAllAdmin" prefHeight="120.0" prefWidth="300.0" style="-fx-background-color: #577CFF; -fx-text-fill: white;" styleClass="rad-btn-2" text="Admin" wrapText="true">
+            <Button alignment="CENTER" layoutX="155.0" layoutY="167.0" mnemonicParsing="false" onAction="#toAllAdmin" prefHeight="120.0" prefWidth="300.0" styleClass="rad-btn-2" stylesheets="@css/blueButton.css" text="Admin" wrapText="true">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
@@ -40,8 +24,11 @@
                         <Image url="@Images/AdminPictureAdmin.png" />
                      </image></ImageView>
                </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
-            <Button alignment="CENTER" layoutX="154.0" layoutY="365.0" mnemonicParsing="false" onAction="#toAdminAllDoctors" prefHeight="120.0" prefWidth="300.0" style="-fx-background-color: #577CFF; -fx-text-fill: white;" styleClass="rad-btn-2" text="Doctor">
+            <Button alignment="CENTER" layoutX="154.0" layoutY="365.0" mnemonicParsing="false" onAction="#toAllDoctor" prefHeight="120.0" prefWidth="300.0" styleClass="rad-btn-2" stylesheets="@css/blueButton.css" text="Doctor">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
@@ -51,8 +38,11 @@
                         <Image url="@Images/DoctorPictureAdmin.png" />
                      </image></ImageView>
                </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
-            <Button alignment="CENTER" layoutX="589.0" layoutY="365.0" mnemonicParsing="false" onAction="#toAdminAllPatients" prefHeight="120.0" prefWidth="300.0" style="-fx-background-color: #577CFF; -fx-text-fill: white;" styleClass="rad-btn-2" text="Patent">
+            <Button alignment="CENTER" layoutX="589.0" layoutY="365.0" mnemonicParsing="false" onAction="#toAllPatient" prefHeight="120.0" prefWidth="300.0" styleClass="rad-btn-2" stylesheets="@css/blueButton.css" text="Patient">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
@@ -62,8 +52,11 @@
                         <Image url="@Images/PatientPictureAdmin.png" />
                      </image></ImageView>
                </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
-            <Button alignment="CENTER" layoutX="153.0" layoutY="565.0" mnemonicParsing="false" onAction="#toAdminAllDepartments" prefHeight="120.0" prefWidth="737.0" style="-fx-background-color: #577CFF; -fx-text-fill: white;" styleClass="rad-btn-2" text="Department">
+            <Button alignment="CENTER" layoutX="153.0" layoutY="565.0" mnemonicParsing="false" onAction="#toAllDepartment" prefHeight="120.0" prefWidth="737.0" styleClass="rad-btn-2" stylesheets="@css/blueButton.css" text="Department">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
@@ -73,8 +66,11 @@
                         <Image url="@Images/DepartmentPictureAdmin.png" />
                      </image></ImageView>
                </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
-            <Button alignment="CENTER" layoutX="589.0" layoutY="167.0" mnemonicParsing="false" onAction="#toAdminAllAppointments" prefHeight="120.0" prefWidth="300.0" style="-fx-background-color: #577CFF; -fx-text-fill: white;" styleClass="rad-btn-2" text="Appointment">
+            <Button alignment="CENTER" layoutX="589.0" layoutY="167.0" mnemonicParsing="false" onAction="#toAllAppointment" prefHeight="120.0" prefWidth="300.0" styleClass="rad-btn-2" stylesheets="@css/blueButton.css" text="Appointment">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
@@ -84,56 +80,76 @@
                         <Image url="@Images/AppointmentPictureAdmin.png" />
                      </image></ImageView>
                </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
-         </children>
-      </Pane>
-      <Pane fx:id="navLand" layoutX="16.0" layoutY="9.0" prefHeight="65.0" prefWidth="1038.0" style="-fx-background-color: #577CFF; -fx-background-radius: 10;">
-         <effect>
-            <DropShadow height="34.92" radius="17.145" width="35.66">
-               <color>
-                  <Color opacity="0.5" />
-               </color>
-            </DropShadow>
-         </effect>
-         <children>
-            <ImageView fx:id="logo" accessibleRole="BUTTON" fitHeight="65.0" fitWidth="68.0" layoutX="55.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/RAULogo.png" />
-               </image>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ImageView>
-            <Button layoutX="896.0" layoutY="14.0" mnemonicParsing="false" onAction="#logout" prefHeight="32.0" prefWidth="106.0" style="-fx-background-color: #fff; -fx-cursor: Hand;" text="Logout" textAlignment="CENTER" textFill="#001973">
-               <font>
-                  <Font name="Leelawadee Bold" size="17.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
+            <Pane layoutX="18.0" layoutY="13.0" prefHeight="65.0" prefWidth="1038.0" style="-fx-background-color: #577CFF; -fx-background-radius: 10;">
                <effect>
-                  <DropShadow height="6.34" radius="4.1375" width="12.21">
+                  <DropShadow height="50.0" radius="24.5" width="50.0">
                      <color>
                         <Color opacity="0.5" />
                      </color>
                   </DropShadow>
                </effect>
-            </Button>
-            <Hyperlink accessibleRole="BUTTON" layoutX="310.0" layoutY="18.0" text="HOME" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Leelawadee Bold" size="17.0" />
-               </font>
-            </Hyperlink>
-            <Hyperlink accessibleRole="BUTTON" layoutX="405.0" layoutY="18.0" text="SERVICES" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Leelawadee Bold" size="17.0" />
-               </font>
-            </Hyperlink>
-            <Hyperlink accessibleRole="BUTTON" layoutX="517.0" layoutY="18.0" text="ABOUT" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Leelawadee Bold" size="17.0" />
-               </font>
-            </Hyperlink>
+               <children>
+                  <ImageView accessibleRole="BUTTON" fitHeight="57.0" fitWidth="58.0" layoutX="55.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/RAULogo.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Button layoutX="887.0" layoutY="12.0" mnemonicParsing="false" onAction="#logout" prefHeight="40.0" prefWidth="115.0" stylesheets="@css/whiteButton.css" text="Logout" textAlignment="CENTER" textFill="#2d55b9">
+                     <font>
+                        <Font name="Leelawadee Bold" size="17.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Images/Logout.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="284.0" layoutY="9.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="90.0" style="-fx-opacity: 1;" stylesheets="@css/navLink.css" text="Home">
+                     <font>
+                        <Font name="Leelawadee Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="374.0" layoutY="9.0" mnemonicParsing="false" onAction="#toAllAdmin" prefHeight="45.0" prefWidth="90.0" stylesheets="@css/navLink.css" text="Admin">
+                     <font>
+                        <Font name="Leelawadee Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="464.0" layoutY="9.0" mnemonicParsing="false" onAction="#toAllDoctor" prefHeight="45.0" prefWidth="90.0" stylesheets="@css/navLink.css" text="Doctor">
+                     <font>
+                        <Font name="Leelawadee Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="554.0" layoutY="9.0" mnemonicParsing="false" onAction="#toAllPatient" prefHeight="45.0" prefWidth="90.0" stylesheets="@css/navLink.css" text="Patient">
+                     <font>
+                        <Font name="Leelawadee Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </Pane>
          </children>
       </Pane>
    </children>

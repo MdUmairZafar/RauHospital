@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -15,88 +15,9 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="779.0" maxWidth="1073.0" minHeight="779.0" minWidth="1073.0" prefHeight="779.0" prefWidth="1073.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.demo2.RegistrationController">
+<AnchorPane maxHeight="779.0" maxWidth="1073.0" minHeight="779.0" minWidth="1073.0" prefHeight="779.0" prefWidth="1073.0" styleClass="bg-white" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.demo2.RegistrationController">
    <children>
-      <ImageView fitHeight="533.0" fitWidth="542.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Images/TopLeftCircleBackground.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="497.0" fitWidth="651.0" layoutX="88.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Images/MidCricleBackground.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="558.0" fitWidth="1073.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Images/BottomRightCircleBackground.png" />
-         </image>
-      </ImageView>
-      <Pane layoutX="16.0" layoutY="9.0" prefHeight="65.0" prefWidth="1038.0" style="-fx-background-color: #1f93ff; -fx-background-radius: 10;">
-         <effect>
-            <DropShadow height="34.19" radius="16.9625" width="35.66">
-               <color>
-                  <Color opacity="0.7175572514533997" />
-               </color>
-            </DropShadow>
-         </effect>
-         <children>
-            <ImageView fx:id="logo" accessibleRole="BUTTON" fitHeight="65.0" fitWidth="68.0" layoutX="55.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/RAULogo.png" />
-               </image>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ImageView>
-            <Button fx:id="login_button_nav_register" contentDisplay="CENTER" layoutX="760.0" layoutY="14.0" mnemonicParsing="false" onAction="#toLoginForm" prefHeight="32.0" prefWidth="106.0" style="-fx-background-color: #fff; -fx-cursor: hand;" text="LOGIN" textAlignment="CENTER" textFill="#001973">
-               <font>
-                  <Font name="Leelawadee Bold" size="17.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <effect>
-                  <DropShadow height="15.14" radius="6.3375" width="12.21">
-                     <color>
-                        <Color opacity="0.5" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Button>
-            <Button fx:id="register_button_nav_register" contentDisplay="CENTER" layoutX="885.0" layoutY="14.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="106.0" style="-fx-background-color: #fff; -fx-cursor: Hand;" text="REGISTER" textAlignment="CENTER" textFill="#001973">
-               <font>
-                  <Font name="Leelawadee Bold" size="17.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <effect>
-                  <DropShadow height="15.14" radius="6.3375" width="12.21">
-                     <color>
-                        <Color opacity="0.5" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Button>
-            <Hyperlink accessibleRole="BUTTON" layoutX="310.0" layoutY="18.0" onAction="#toLandingPage" text="HOME" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Leelawadee Bold" size="17.0" />
-               </font>
-            </Hyperlink>
-            <Hyperlink accessibleRole="BUTTON" layoutX="405.0" layoutY="18.0" text="SERVICES" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Leelawadee Bold" size="17.0" />
-               </font>
-            </Hyperlink>
-            <Hyperlink accessibleRole="BUTTON" layoutX="517.0" layoutY="18.0" text="ABOUT" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Leelawadee Bold" size="17.0" />
-               </font>
-            </Hyperlink>
-         </children>
-      </Pane>
-      <Pane layoutX="50.0" layoutY="135.0" prefHeight="542.0" prefWidth="971.0" style="-fx-background-color: #b9c9fc; -fx-background-radius: 12;">
+      <Pane layoutX="50.0" layoutY="135.0" prefHeight="542.0" prefWidth="971.0">
          <effect>
             <DropShadow height="47.75" radius="23.1875" width="47.0">
                <color>
@@ -106,126 +27,96 @@
          </effect>
          <children>
             <TextField fx:id="fnameRegister" layoutX="67.0" layoutY="57.0" prefHeight="50.0" prefWidth="370.0" promptText="First Name">
-               <effect>
-                  <DropShadow height="4.89" radius="3.0424999999999995" width="9.28">
-                     <color>
-                        <Color opacity="0.5" />
-                     </color>
-                  </DropShadow>
-               </effect>
                <font>
                   <Font name="Leelawadee Bold" size="15.0" />
                </font>
+               <styleClass>
+                  <String fx:value="bg-white" />
+                  <String fx:value="btm-border" />
+               </styleClass>
             </TextField>
             <TextField fx:id="lnameRegister" layoutX="530.0" layoutY="57.0" prefHeight="50.0" prefWidth="370.0" promptText="Last Name">
-               <effect>
-                  <DropShadow height="4.89" radius="3.0424999999999995" width="9.28">
-                     <color>
-                        <Color opacity="0.5" />
-                     </color>
-                  </DropShadow>
-               </effect>
                <font>
                   <Font name="Leelawadee Bold" size="15.0" />
                </font>
+               <styleClass>
+                  <String fx:value="bg-white" />
+                  <String fx:value="btm-border" />
+               </styleClass>
             </TextField>
             <TextField fx:id="cnicRegister" layoutX="67.0" layoutY="133.0" prefHeight="50.0" prefWidth="370.0" promptText="CNIC">
-               <effect>
-                  <DropShadow height="4.89" radius="3.0424999999999995" width="9.28">
-                     <color>
-                        <Color opacity="0.5" />
-                     </color>
-                  </DropShadow>
-               </effect>
                <font>
                   <Font name="Leelawadee Bold" size="15.0" />
                </font>
+               <styleClass>
+                  <String fx:value="bg-white" />
+                  <String fx:value="btm-border" />
+               </styleClass>
             </TextField>
             <TextField fx:id="emailRegister" layoutX="530.0" layoutY="133.0" prefHeight="50.0" prefWidth="370.0" promptText="Email Address">
-               <effect>
-                  <DropShadow height="4.89" radius="3.0424999999999995" width="9.28">
-                     <color>
-                        <Color opacity="0.5" />
-                     </color>
-                  </DropShadow>
-               </effect>
                <font>
                   <Font name="Leelawadee Bold" size="15.0" />
                </font>
+               <styleClass>
+                  <String fx:value="bg-white" />
+                  <String fx:value="btm-border" />
+               </styleClass>
             </TextField>
             <PasswordField fx:id="passwordRegister" layoutX="67.0" layoutY="211.0" prefHeight="50.0" prefWidth="370.0" promptText="Password">
                <font>
                   <Font name="Leelawadee Bold" size="15.0" />
                </font>
-               <effect>
-                  <DropShadow height="4.89" radius="3.0424999999999995" width="9.28">
-                     <color>
-                        <Color opacity="0.5" />
-                     </color>
-                  </DropShadow>
-               </effect>
+               <styleClass>
+                  <String fx:value="bg-white" />
+                  <String fx:value="btm-border" />
+               </styleClass>
             </PasswordField>
             <PasswordField fx:id="confirmPasswordRegister" layoutX="530.0" layoutY="211.0" prefHeight="50.0" prefWidth="370.0" promptText="Re-write Password">
                <font>
                   <Font name="Leelawadee Bold" size="15.0" />
                </font>
-               <effect>
-                  <DropShadow height="4.89" radius="3.0424999999999995" width="9.28">
-                     <color>
-                        <Color opacity="0.5" />
-                     </color>
-                  </DropShadow>
-               </effect>
+               <styleClass>
+                  <String fx:value="bg-white" />
+                  <String fx:value="btm-border" />
+               </styleClass>
             </PasswordField>
             <TextField fx:id="houseNoRegister" layoutX="67.0" layoutY="287.0" prefHeight="50.0" prefWidth="370.0" promptText="House No / Street">
-               <effect>
-                  <DropShadow height="4.89" radius="3.0424999999999995" width="9.28">
-                     <color>
-                        <Color opacity="0.5" />
-                     </color>
-                  </DropShadow>
-               </effect>
                <font>
                   <Font name="Leelawadee Bold" size="15.0" />
                </font>
+               <styleClass>
+                  <String fx:value="bg-white" />
+                  <String fx:value="btm-border" />
+               </styleClass>
             </TextField>
             <TextField fx:id="cityRegister" layoutX="530.0" layoutY="287.0" prefHeight="50.0" prefWidth="370.0" promptText="City">
-               <effect>
-                  <DropShadow height="4.89" radius="3.0424999999999995" width="9.28">
-                     <color>
-                        <Color opacity="0.5" />
-                     </color>
-                  </DropShadow>
-               </effect>
                <font>
                   <Font name="Leelawadee Bold" size="15.0" />
                </font>
+               <styleClass>
+                  <String fx:value="bg-white" />
+                  <String fx:value="btm-border" />
+               </styleClass>
             </TextField>
             <DatePicker fx:id="dobRegister" editable="false" layoutX="67.0" layoutY="362.0" maxHeight="50.0" maxWidth="370.0" minHeight="50.0" minWidth="300.0" prefHeight="50.0" prefWidth="370.0" promptText="Date of Birth" showWeekNumbers="true">
-               <effect>
-                  <DropShadow height="4.89" radius="3.0424999999999995" width="9.28">
-                     <color>
-                        <Color opacity="0.5" />
-                     </color>
-                  </DropShadow>
-               </effect>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <styleClass>
+                  <String fx:value="bg-white" />
+                  <String fx:value="btm-border" />
+               </styleClass>
             </DatePicker>
             <TextField fx:id="phoneNumberRegister" layoutX="530.0" layoutY="362.0" prefHeight="50.0" prefWidth="370.0" promptText="03_Phone Number">
-               <effect>
-                  <DropShadow height="4.89" radius="3.0424999999999995" width="9.28">
-                     <color>
-                        <Color opacity="0.5" />
-                     </color>
-                  </DropShadow>
-               </effect>
                <font>
                   <Font name="Leelawadee Bold" size="15.0" />
                </font>
+               <styleClass>
+                  <String fx:value="bg-white" />
+                  <String fx:value="btm-border" />
+               </styleClass>
             </TextField>
-            <Button fx:id="registerButtonFormRegister" contentDisplay="CENTER" layoutX="407.0" layoutY="470.0" onAction="#registerAction" prefHeight="43.0" prefWidth="157.0" style="-fx-background-color: #1e90ff; -fx-cursor: hand;" text="REGISTER" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="registerButtonFormRegister" contentDisplay="CENTER" layoutX="407.0" layoutY="470.0" onAction="#registerAction" prefHeight="43.0" prefWidth="157.0" stylesheets="@css/blueButton.css" text="REGISTER" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Leelawadee Bold" size="19.0" />
                </font>
@@ -308,6 +199,11 @@
                </font>
             </Label>
          </children>
+         <styleClass>
+            <String fx:value="bg-white" />
+            <String fx:value="bg-rad-12" />
+            <String fx:value="card-border" />
+         </styleClass>
       </Pane>
       <Pane layoutY="736.0" prefHeight="43.0" prefWidth="1073.0" style="-fx-background-color: WHITE;">
          <effect>
@@ -338,6 +234,79 @@
                   <Image url="@Images/PhoneLogo.png" />
                </image>
             </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="18.0" layoutY="12.0" prefHeight="65.0" prefWidth="1038.0" style="-fx-background-color: #577CFF; -fx-background-radius: 10;">
+         <effect>
+            <DropShadow height="50.0" radius="24.5" width="50.0">
+               <color>
+                  <Color opacity="0.5" />
+               </color>
+            </DropShadow>
+         </effect>
+         <children>
+            <ImageView accessibleRole="BUTTON" fitHeight="57.0" fitWidth="58.0" layoutX="55.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/RAULogo.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Button layoutX="887.0" layoutY="12.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="127.0" stylesheets="@css/whiteButton.css" text="Register" textAlignment="CENTER" textFill="#2d55b9">
+               <font>
+                  <Font name="Leelawadee Bold" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/RegisterFormLogo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="327.0" layoutY="9.0" mnemonicParsing="false" onAction="#toLandingPage" prefHeight="45.0" prefWidth="90.0" stylesheets="@css/navLink.css" text="Home">
+               <font>
+                  <Font name="Leelawadee Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="417.0" layoutY="9.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="90.0" stylesheets="@css/navLink.css" text="About">
+               <font>
+                  <Font name="Leelawadee Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="507.0" layoutY="9.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="102.0" stylesheets="@css/navLink.css" text="Services">
+               <font>
+                  <Font name="Leelawadee Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="743.0" layoutY="12.0" mnemonicParsing="false" onAction="#toLoginForm" prefHeight="42.0" prefWidth="131.0" stylesheets="@css/whiteButton.css" text="Login" textAlignment="CENTER" textFill="#2d55b9">
+               <font>
+                  <Font name="Leelawadee Bold" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/LoginFormLogo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
       </Pane>
    </children>

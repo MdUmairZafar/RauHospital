@@ -1,1 +1,39 @@
-<?xml version="1.0" encoding="UTF-8"?><?import java.lang.*?><?import java.util.*?><?import javafx.scene.*?><?import javafx.scene.control.*?><?import javafx.scene.layout.*?><AnchorPane xmlns="http://javafx.com/javafx"            xmlns:fx="http://javafx.com/fxml"            fx:controller="sample.demo2.PatientMakeAppointmentController"            prefHeight="400.0" prefWidth="600.0"></AnchorPane>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.demo2.PatientMakeAppointmentController">
+   <children>
+      <TableView layoutX="35.0" layoutY="113.0" prefHeight="200.0" prefWidth="520.0" style="-fx-background-radius: 8;" stylesheets="@css/style.css">
+        <columns>
+          <TableColumn prefWidth="38.0" text="#" />
+          <TableColumn prefWidth="112.0" text="Pat ID" />
+            <TableColumn prefWidth="214.0" text="Pat Name" />
+            <TableColumn prefWidth="150.0" text=" " />
+        </columns>
+         <effect>
+            <DropShadow height="50.0" radius="24.5" width="50.0">
+               <color>
+                  <Color opacity="0.30000001192092896" />
+               </color>
+            </DropShadow>
+         </effect>
+      </TableView>
+      <Button layoutX="149.0" layoutY="47.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="146.0" styleClass="blue-btn" stylesheets="@css/style.css" text="Button" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>

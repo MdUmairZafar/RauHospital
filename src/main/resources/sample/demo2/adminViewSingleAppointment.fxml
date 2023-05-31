@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.String?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -14,140 +15,181 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="779.0" prefWidth="1073.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.demo2.DoctorHomeController">
+<AnchorPane prefHeight="779.0" prefWidth="1073.0" styleClass="bg-white" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.demo2.AdminViewSingleAppointmentController">
    <children>
-      <Pane prefHeight="781.0" prefWidth="1074.0">
+      <Pane layoutX="119.0" layoutY="216.0" prefHeight="489.0" prefWidth="857.0">
          <children>
-            <ImageView fitHeight="725.0" fitWidth="807.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/TopLeftCircleBackground.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="542.0" fitWidth="1083.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/BottomRightCircleBackground.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="542.0" fitWidth="778.0" layoutX="149.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/MidCricleBackground.png" />
-               </image>
-            </ImageView>
-            <Button layoutX="408.0" layoutY="693.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="258.0" styleClass="blue-btn" text="Back To All Appointments" textFill="WHITE">
+            <Line endX="752.0" layoutX="102.0" layoutY="49.0" opacity="0.32" startX="-100.0" stroke="#3964db8a" strokeWidth="2.0" />
+            <Line endX="752.0" layoutX="101.0" layoutY="107.0" opacity="0.32" startX="-100.0" stroke="#3964db8a" strokeWidth="2.0" />
+            <Line endX="752.0" layoutX="102.0" layoutY="162.0" opacity="0.32" startX="-100.0" stroke="#3964db8a" strokeWidth="2.0" />
+            <Line endX="756.0" layoutX="101.0" layoutY="219.0" opacity="0.32" startX="-100.0" stroke="#3964db8a" strokeWidth="2.0" />
+            <Line endX="756.0" layoutX="101.0" layoutY="272.0" opacity="0.32" startX="-100.0" stroke="#3964db8a" strokeWidth="2.0" />
+            <Line endX="120.0" endY="171.0" layoutX="213.0" layoutY="317.0" opacity="0.32" startX="120.0" startY="-315.0" stroke="#2d55b9" strokeWidth="3.0" />
+            <Label layoutX="80.0" layoutY="8.0" text="Appointment ID" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="79.0" layoutY="61.0" text="Patient Name" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="79.0" layoutY="117.0" text="Doctor Name" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="79.0" layoutY="172.0" text="Department Name" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="79.0" layoutY="282.0" text="Time" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="79.0" layoutY="337.0" text="Visited" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="id" layoutX="379.0" layoutY="10.0" prefHeight="32.0" prefWidth="430.0" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Regular" size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label fx:id="patientField" layoutX="378.0" layoutY="63.0" prefHeight="32.0" prefWidth="430.0" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Regular" size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label fx:id="doctorField" layoutX="378.0" layoutY="119.0" prefHeight="32.0" prefWidth="430.0" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Regular" size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label fx:id="departmentField" layoutX="378.0" layoutY="174.0" prefHeight="32.0" prefWidth="430.0" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Regular" size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label fx:id="dateField" layoutX="378.0" layoutY="231.0" prefHeight="32.0" prefWidth="430.0" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Regular" size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label layoutX="79.0" layoutY="389.0" text="Prescription" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="79.0" layoutY="227.0" text="Date" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Bold" size="18.0" />
+               </font>
+            </Label>
+            <Line endX="755.0" layoutX="101.0" layoutY="326.0" opacity="0.32" startX="-100.0" stroke="#3964db8a" strokeWidth="2.0" />
+            <Label fx:id="timeField" layoutX="378.0" layoutY="283.0" prefHeight="32.0" prefWidth="430.0" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Regular" size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label fx:id="vistedField" layoutX="377.0" layoutY="337.0" prefHeight="32.0" prefWidth="430.0" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Regular" size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <TextArea fx:id="prescriptionField" editable="false" layoutX="363.0" layoutY="379.0" prefHeight="104.0" prefWidth="459.0" styleClass="bg-white">
+               <font>
+                  <Font name="Dubai Regular" size="18.0" />
+               </font>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </TextArea>
+            <Line endX="752.0" layoutX="102.0" layoutY="381.0" opacity="0.32" startX="-100.0" stroke="#3964db8a" strokeWidth="2.0" />
+         </children>
+         <styleClass>
+            <String fx:value="bg-white" />
+            <String fx:value="bg-rad-12" />
+         </styleClass>
+         <effect>
+            <DropShadow height="30.0" radius="14.5" width="30.0">
+               <color>
+                  <Color opacity="0.15000000596046448" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Pane>
+      <Pane layoutX="55.0" layoutY="103.0" prefHeight="81.0" prefWidth="959.0">
+         <children>
+            <Button layoutX="25.0" layoutY="19.0" mnemonicParsing="false" onAction="#toAllAppointment" prefHeight="43.0" prefWidth="56.0" stylesheets="@css/blueButton.css" textFill="WHITE">
                <font>
                   <Font name="Leelawadee Bold" size="18.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
-            <Label layoutX="424.0" layoutY="106.0" text="View Appointments" textFill="#001d73">
+            <Label layoutX="120.0" layoutY="28.0" text="Appointment Details" textFill="#2d55b9">
                <font>
                   <Font name="Leelawadee Bold" size="24.0" />
                </font>
             </Label>
-            <Pane layoutX="109.0" layoutY="173.0" prefHeight="489.0" prefWidth="857.0">
-               <children>
-                  <Line endX="752.0" layoutX="102.0" layoutY="49.0" startX="-100.0" stroke="#3964db8a" strokeWidth="2.0" />
-                  <Line endX="752.0" layoutX="101.0" layoutY="98.0" startX="-100.0" stroke="#3964db8a" strokeWidth="2.0" />
-                  <Line endX="752.0" layoutX="102.0" layoutY="148.0" startX="-100.0" stroke="#3964db8a" strokeWidth="2.0" />
-                  <Line endX="752.0" layoutX="101.0" layoutY="202.0" startX="-100.0" stroke="#3964db8a" strokeWidth="2.0" />
-                  <Line endX="120.0" endY="171.0" layoutX="110.0" layoutY="317.0" startX="120.0" startY="-315.0" stroke="#001973" strokeWidth="3.0" />
-                  <Label layoutX="52.0" layoutY="8.0" text="Appointment ID" textFill="#001973">
-                     <font>
-                        <Font name="Dubai Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="52.0" layoutY="57.0" text="Doctor ID" textFill="#001973">
-                     <font>
-                        <Font name="Dubai Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="52.0" layoutY="107.0" text="Visit Date" textFill="#001973">
-                     <font>
-                        <Font name="Dubai Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="52.0" layoutY="159.0" text="Visit Time" textFill="#001973">
-                     <font>
-                        <Font name="Dubai Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="53.0" layoutY="220.0" text="Prescription" textFill="#001973">
-                     <font>
-                        <Font name="Dubai Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="265.0" layoutY="10.0" prefHeight="32.0" prefWidth="225.0" textFill="#001973">
-                     <font>
-                        <Font name="Dubai Regular" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="265.0" layoutY="59.0" prefHeight="32.0" prefWidth="200.0" textFill="#001973">
-                     <font>
-                        <Font name="Dubai Regular" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="265.0" layoutY="109.0" prefHeight="32.0" prefWidth="200.0" textFill="#001973">
-                     <font>
-                        <Font name="Dubai Regular" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="265.0" layoutY="161.0" prefHeight="32.0" prefWidth="200.0" textFill="#001973">
-                     <font>
-                        <Font name="Dubai Regular" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label alignment="TOP_LEFT" layoutX="266.0" layoutY="221.0" prefHeight="248.0" prefWidth="544.0" textFill="#001973" wrapText="true">
-                     <font>
-                        <Font name="Dubai Regular" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="500.0" layoutY="59.0" text="Patient ID" textFill="#001973">
-                     <font>
-                        <Font name="Dubai Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="500.0" layoutY="109.0" text="Department ID" textFill="#001973">
-                     <font>
-                        <Font name="Dubai Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="500.0" layoutY="159.0" text="Visited" textFill="#001973">
-                     <font>
-                        <Font name="Dubai Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="634.0" layoutY="58.0" prefHeight="32.0" prefWidth="200.0" textFill="#001973">
-                     <font>
-                        <Font name="Dubai Regular" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="634.0" layoutY="108.0" prefHeight="32.0" prefWidth="200.0" textFill="#001973">
-                     <font>
-                        <Font name="Dubai Regular" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="634.0" layoutY="160.0" prefHeight="32.0" prefWidth="200.0" textFill="#001973">
-                     <font>
-                        <Font name="Dubai Regular" size="18.0" />
-                     </font>
-                  </Label>
-               </children>
-               <styleClass>
-                  <String fx:value="datatable-background" />
-                  <String fx:value="rad-btn-2" />
-               </styleClass>
-            </Pane>
          </children>
-      </Pane>
-      <Pane fx:id="navLand" layoutX="16.0" layoutY="9.0" prefHeight="65.0" prefWidth="1038.0" style="-fx-background-color: #577CFF; -fx-background-radius: 10;">
+         <styleClass>
+            <String fx:value="card-border" />
+            <String fx:value="bg-rad-12" />
+            <String fx:value="bg-white" />
+         </styleClass>
          <effect>
-            <DropShadow height="34.92" radius="17.145" width="35.66">
+            <DropShadow height="30.0" radius="14.5" width="30.0">
+               <color>
+                  <Color opacity="0.15000000596046448" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Pane>
+      <Pane layoutX="18.0" layoutY="13.0" prefHeight="65.0" prefWidth="1038.0" style="-fx-background-color: #577CFF; -fx-background-radius: 10;">
+         <effect>
+            <DropShadow height="50.0" radius="24.5" width="50.0">
                <color>
                   <Color opacity="0.5" />
                </color>
             </DropShadow>
          </effect>
          <children>
-            <ImageView fx:id="logo" accessibleRole="BUTTON" fitHeight="65.0" fitWidth="68.0" layoutX="55.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView accessibleRole="BUTTON" fitHeight="57.0" fitWidth="58.0" layoutX="55.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/RAULogo.png" />
                </image>
@@ -155,51 +197,53 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
-            <Button fx:id="login_button_nav_land" layoutX="771.0" layoutY="14.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="106.0" style="-fx-background-color: #fff; -fx-cursor: hand;" text="LOGIN" textAlignment="CENTER" textFill="#001973">
+            <Button layoutX="887.0" layoutY="12.0" mnemonicParsing="false" onAction="#logout" prefHeight="40.0" prefWidth="115.0" stylesheets="@css/whiteButton.css" text="Logout" textAlignment="CENTER" textFill="#2d55b9">
                <font>
                   <Font name="Leelawadee Bold" size="17.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
-               <effect>
-                  <DropShadow height="6.34" radius="4.1375" width="12.21">
-                     <color>
-                        <Color opacity="0.5" />
-                     </color>
-                  </DropShadow>
-               </effect>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/Logout.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
-            <Button fx:id="register_button_nav_land" layoutX="896.0" layoutY="14.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="106.0" style="-fx-background-color: #fff; -fx-cursor: Hand;" text="REGISTER" textAlignment="CENTER" textFill="#001973">
+            <Button layoutX="284.0" layoutY="9.0" mnemonicParsing="false" onAction="#toAdminHome" prefHeight="45.0" prefWidth="90.0" stylesheets="@css/navLink.css" text="Home">
                <font>
-                  <Font name="Leelawadee Bold" size="17.0" />
+                  <Font name="Leelawadee Bold" size="18.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
-               <effect>
-                  <DropShadow height="6.34" radius="4.1375" width="12.21">
-                     <color>
-                        <Color opacity="0.5" />
-                     </color>
-                  </DropShadow>
-               </effect>
             </Button>
-            <Hyperlink accessibleRole="BUTTON" layoutX="310.0" layoutY="18.0" text="HOME" textAlignment="CENTER" textFill="WHITE">
+            <Button layoutX="374.0" layoutY="9.0" mnemonicParsing="false" onAction="#toAllAdmin" prefHeight="45.0" prefWidth="90.0" stylesheets="@css/navLink.css" text="Admin">
                <font>
-                  <Font name="Leelawadee Bold" size="17.0" />
+                  <Font name="Leelawadee Bold" size="18.0" />
                </font>
-            </Hyperlink>
-            <Hyperlink accessibleRole="BUTTON" layoutX="405.0" layoutY="18.0" text="SERVICES" textAlignment="CENTER" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="464.0" layoutY="9.0" mnemonicParsing="false" onAction="#toAllDoctor" prefHeight="45.0" prefWidth="90.0" stylesheets="@css/navLink.css" text="Doctor">
                <font>
-                  <Font name="Leelawadee Bold" size="17.0" />
+                  <Font name="Leelawadee Bold" size="18.0" />
                </font>
-            </Hyperlink>
-            <Hyperlink accessibleRole="BUTTON" layoutX="517.0" layoutY="18.0" text="ABOUT" textAlignment="CENTER" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="554.0" layoutY="9.0" mnemonicParsing="false" onAction="#toAllPatient" prefHeight="45.0" prefWidth="90.0" stylesheets="@css/navLink.css" text="Patient">
                <font>
-                  <Font name="Leelawadee Bold" size="17.0" />
+                  <Font name="Leelawadee Bold" size="18.0" />
                </font>
-            </Hyperlink>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </children>
       </Pane>
    </children>

@@ -14,21 +14,21 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="779.0" prefWidth="1073.0" styleClass="bg-white" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.demo2.AdminAllAdminController">
+<AnchorPane prefHeight="779.0" prefWidth="1073.0" styleClass="bg-white" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.demo2.AdminAllPatientController">
    <children>
       <Pane prefHeight="781.0" prefWidth="1074.0">
          <children>
-            <TableView fx:id="adminTable" layoutX="54.0" layoutY="203.0" prefHeight="534.0" prefWidth="967.0" styleClass="center-text" stylesheets="@css/tableStyle.css">
-              <columns>
-                <TableColumn fx:id="srNo" prefWidth="58.0" text="Sr. #" />
-                <TableColumn fx:id="adminId" prefWidth="99.0" text="Admin ID" />
-                  <TableColumn fx:id="adminName" prefWidth="236.0" text="Admin Name" />
+            <TableView fx:id="patientTable" layoutX="54.0" layoutY="203.0" prefHeight="534.0" prefWidth="967.0" styleClass="center-text" stylesheets="@css/tableStyle.css">
+               <columns>
+                  <TableColumn fx:id="srNo" prefWidth="58.0" text="Sr. #" />
+                  <TableColumn fx:id="id" prefWidth="99.0" text="Patient ID" />
+                  <TableColumn fx:id="name" prefWidth="236.0" text="Patient Name" />
                   <TableColumn fx:id="email" prefWidth="216.33331298828125" text="Email Address" />
                   <TableColumn fx:id="phone" prefWidth="159.6666259765625" text="Phone Number" />
                   <TableColumn fx:id="viewButton" prefWidth="66.6666259765625" text="View" />
                   <TableColumn fx:id="editButton" prefWidth="56.6666259765625" text="Edit" />
                   <TableColumn fx:id="deleteButton" minWidth="0.0" prefWidth="69.0" text="Delete" />
-              </columns>
+               </columns>
                <effect>
                   <DropShadow height="30.0" radius="14.5" width="30.0">
                      <color>
@@ -77,7 +77,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutX="374.0" layoutY="9.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="90.0" style="-fx-opacity: 1;" stylesheets="@css/navLink.css" text="Admin">
+                  <Button layoutX="374.0" layoutY="9.0" mnemonicParsing="false" onAction="#toAllAdmin" prefHeight="45.0" prefWidth="90.0" stylesheets="@css/navLink.css" text="Admin">
                      <font>
                         <Font name="Leelawadee Bold" size="18.0" />
                      </font>
@@ -93,7 +93,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutX="554.0" layoutY="9.0" mnemonicParsing="false" onAction="#toAllPatient" prefHeight="45.0" prefWidth="90.0" stylesheets="@css/navLink.css" text="Patient">
+                  <Button layoutX="554.0" layoutY="9.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="90.0" style="-fx-opacity: 1;" stylesheets="@css/navLink.css" text="Patient">
                      <font>
                         <Font name="Leelawadee Bold" size="18.0" />
                      </font>
@@ -107,7 +107,7 @@
       </Pane>
       <Pane layoutX="53.0" layoutY="102.0" prefHeight="81.0" prefWidth="971.0">
          <children>
-            <Button layoutX="25.0" layoutY="19.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="56.0" stylesheets="@css/blueButton.css" textFill="WHITE">
+            <Button layoutX="25.0" layoutY="19.0" mnemonicParsing="false" onAction="#toAdminHome" prefHeight="43.0" prefWidth="56.0" stylesheets="@css/blueButton.css" textFill="WHITE">
                <font>
                   <Font name="Leelawadee Bold" size="18.0" />
                </font>
@@ -122,26 +122,11 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Label layoutX="118.0" layoutY="27.0" text="Admin List" textFill="#2d55b9">
+            <Label layoutX="118.0" layoutY="27.0" text="Patients List" textFill="#2d55b9">
                <font>
                   <Font name="Leelawadee Bold" size="24.0" />
                </font>
             </Label>
-            <Button layoutX="771.0" layoutY="20.0" mnemonicParsing="false" onAction="#toAddAdmin" prefHeight="43.0" prefWidth="166.0" stylesheets="@css/blueButton.css" text="Add Admin" textFill="WHITE">
-               <font>
-                  <Font name="Leelawadee Bold" size="18.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <graphic>
-                  <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@Images/RegisterFormLogo.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
          </children>
          <styleClass>
             <String fx:value="bg-white" />

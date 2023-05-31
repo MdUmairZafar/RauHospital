@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -14,23 +15,8 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane minHeight="779.0" minWidth="1073.0" prefHeight="779.0" prefWidth="1073.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.demo2.LoginController">
+<AnchorPane minHeight="779.0" minWidth="1073.0" prefHeight="779.0" prefWidth="1073.0" styleClass="bg-white" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.demo2.LoginController">
    <children>
-      <ImageView fitHeight="521.0" fitWidth="521.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Images/TopLeftCircleBackground.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="546.0" fitWidth="1073.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Images/BottomRightCircleBackground.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="387.0" fitWidth="503.0" layoutX="119.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Images/MidCricleBackground.png" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="473.0" fitWidth="454.0" layoutX="589.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Images/LoginFrontImage.png" />
@@ -39,75 +25,11 @@
             <DropShadow height="73.02" offsetX="6.0" offsetY="10.0" radius="33.995" width="64.96" />
          </effect>
       </ImageView>
-      <Pane layoutX="16.0" layoutY="9.0" prefHeight="65.0" prefWidth="1039.0" style="-fx-background-color: #1f93ff; -fx-background-radius: 10;">
-         <effect>
-            <DropShadow height="34.92" radius="17.145" width="35.66">
-               <color>
-                  <Color opacity="0.5" />
-               </color>
-            </DropShadow>
-         </effect>
-         <children>
-            <ImageView fx:id="logo" accessibleRole="BUTTON" fitHeight="65.0" fitWidth="68.0" layoutX="55.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/RAULogo.png" />
-               </image>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ImageView>
-            <Button fx:id="login_button_nav_login" layoutX="777.0" layoutY="14.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="106.0" style="-fx-background-color: #fff; -fx-cursor: hand;" text="LOGIN" textAlignment="CENTER" textFill="#001973">
-               <font>
-                  <Font name="Leelawadee Bold" size="17.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <effect>
-                  <DropShadow>
-                     <color>
-                        <Color opacity="0.5" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Button>
-            <Button fx:id="register_button_nav_login" layoutX="902.0" layoutY="14.0" mnemonicParsing="false" onAction="#toRegistrationForm" prefHeight="32.0" prefWidth="106.0" style="-fx-background-color: #fff; -fx-cursor: Hand;" text="REGISTER" textAlignment="CENTER" textFill="#001973">
-               <font>
-                  <Font name="Leelawadee Bold" size="17.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <effect>
-                  <DropShadow>
-                     <color>
-                        <Color opacity="0.5" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Button>
-            <Hyperlink accessibleRole="BUTTON" layoutX="310.0" layoutY="18.0" onAction="#toLandingPage" text="HOME" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Leelawadee Bold" size="17.0" />
-               </font>
-            </Hyperlink>
-            <Hyperlink accessibleRole="BUTTON" layoutX="405.0" layoutY="18.0" text="SERVICES" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Leelawadee Bold" size="17.0" />
-               </font>
-            </Hyperlink>
-            <Hyperlink accessibleRole="BUTTON" layoutX="517.0" layoutY="18.0" text="ABOUT" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Leelawadee Bold" size="17.0" />
-               </font>
-            </Hyperlink>
-         </children>
-      </Pane>
-      <Pane layoutX="72.0" layoutY="209.0" prefHeight="334.0" prefWidth="488.0" style="-fx-background-color: #b9c9fc; -fx-background-radius: 12;">
+      <Pane layoutX="72.0" layoutY="209.0" prefHeight="334.0" prefWidth="488.0">
          <effect>
             <DropShadow height="50.0" radius="24.5" width="50.0">
                <color>
-                  <Color opacity="0.5" />
+                  <Color opacity="0.25" />
                </color>
             </DropShadow>
          </effect>
@@ -117,31 +39,25 @@
                   <Image url="@Images/LoginFormLogo.png" />
                </image>
             </ImageView>
-            <TextField fx:id="emailFormLogin" layoutX="53.0" layoutY="65.0" prefHeight="43.0" prefWidth="380.0" promptText="Email Address">
-               <effect>
-                  <DropShadow height="12.21" radius="5.605" width="12.21">
-                     <color>
-                        <Color opacity="0.4694656431674957" />
-                     </color>
-                  </DropShadow>
-               </effect>
+            <TextField fx:id="emailFormLogin" layoutX="53.0" layoutY="58.0" prefHeight="43.0" prefWidth="380.0" promptText="Email Address">
                <font>
                   <Font name="Leelawadee Bold" size="15.0" />
                </font>
+               <styleClass>
+                  <String fx:value="bg-white" />
+                  <String fx:value="btm-border" />
+               </styleClass>
             </TextField>
-            <PasswordField fx:id="passwordFormLogin" layoutX="53.0" layoutY="131.0" prefHeight="43.0" prefWidth="380.0" promptText="Password">
+            <PasswordField fx:id="passwordFormLogin" layoutX="53.0" layoutY="124.0" prefHeight="43.0" prefWidth="380.0" promptText="Password">
                <font>
                   <Font name="Leelawadee Bold" size="15.0" />
                </font>
-               <effect>
-                  <DropShadow height="12.21" radius="5.605" width="12.21">
-                     <color>
-                        <Color opacity="0.4694656431674957" />
-                     </color>
-                  </DropShadow>
-               </effect>
+               <styleClass>
+                  <String fx:value="bg-white" />
+                  <String fx:value="btm-border" />
+               </styleClass>
             </PasswordField>
-            <Button fx:id="loginButtonFormLogin" layoutX="166.0" layoutY="234.0" mnemonicParsing="false" onAction="#loginButtonSetOnAction" prefHeight="43.0" prefWidth="157.0" style="-fx-background-color: #1e90ff; -fx-cursor: hand;" text="LOGIN" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="loginButtonFormLogin" layoutX="166.0" layoutY="249.0" mnemonicParsing="false" onAction="#loginButtonSetOnAction" prefHeight="43.0" prefWidth="157.0" stylesheets="@css/blueButton.css" text="LOGIN" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Leelawadee Bold" size="19.0" />
                </font>
@@ -156,22 +72,35 @@
                   </DropShadow>
                </effect>
             </Button>
-            <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="384.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="384.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/EmailLogo.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="386.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="386.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/LockLogo.png" />
                </image>
             </ImageView>
-            <Label fx:id="invalidCredLabelLogin" layoutY="182.0" prefHeight="43.0" prefWidth="488.0" style="-fx-alignment: center;" textAlignment="CENTER" textFill="RED">
+            <Label fx:id="invalidCredLabelLogin" layoutY="206.0" prefHeight="43.0" prefWidth="488.0" style="-fx-alignment: center;" textAlignment="CENTER" textFill="RED">
                <font>
-                  <Font name="System Bold" size="13.0" />
+                  <Font name="System Bold" size="12.0" />
                </font>
             </Label>
+            <Label layoutX="98.0" layoutY="191.0" opacity="0.78" text="Login As" textFill="#0c0a5b">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <CheckBox fx:id="patientCheckBox" layoutX="175.0" layoutY="193.0" mnemonicParsing="false" text="Patient" textFill="#0c0a5b" />
+            <CheckBox fx:id="doctorCheckBox" layoutX="249.0" layoutY="193.0" mnemonicParsing="false" text="Doctor" textFill="#0c0a5b" />
+            <CheckBox fx:id="adminCheckBox" layoutX="319.0" layoutY="193.0" mnemonicParsing="false" text="Admin" textFill="#0c0a5b" />
          </children>
+         <styleClass>
+            <String fx:value="bg-white" />
+            <String fx:value="bg-rad-12" />
+            <String fx:value="card-border" />
+         </styleClass>
       </Pane>
       <Pane layoutY="736.0" prefHeight="43.0" prefWidth="1073.0" style="-fx-background-color: WHITE;">
          <effect>
@@ -202,6 +131,79 @@
                   <Image url="@Images/PhoneLogo.png" />
                </image>
             </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="18.0" layoutY="12.0" prefHeight="65.0" prefWidth="1038.0" style="-fx-background-color: #577CFF; -fx-background-radius: 10;">
+         <effect>
+            <DropShadow height="50.0" radius="24.5" width="50.0">
+               <color>
+                  <Color opacity="0.5" />
+               </color>
+            </DropShadow>
+         </effect>
+         <children>
+            <ImageView accessibleRole="BUTTON" fitHeight="57.0" fitWidth="58.0" layoutX="55.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/RAULogo.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Button layoutX="887.0" layoutY="12.0" mnemonicParsing="false" onAction="#toRegistrationForm" prefHeight="42.0" prefWidth="127.0" stylesheets="@css/whiteButton.css" text="Register" textAlignment="CENTER" textFill="#2d55b9">
+               <font>
+                  <Font name="Leelawadee Bold" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/RegisterFormLogo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="292.0" layoutY="9.0" mnemonicParsing="false" onAction="#toLandingPage" prefHeight="45.0" prefWidth="90.0" stylesheets="@css/navLink.css" text="Home">
+               <font>
+                  <Font name="Leelawadee Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="382.0" layoutY="9.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="90.0" stylesheets="@css/navLink.css" text="About">
+               <font>
+                  <Font name="Leelawadee Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="472.0" layoutY="9.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="102.0" stylesheets="@css/navLink.css" text="Services">
+               <font>
+                  <Font name="Leelawadee Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="743.0" layoutY="12.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="131.0" stylesheets="@css/whiteButton.css" text="Login" textAlignment="CENTER" textFill="#2d55b9">
+               <font>
+                  <Font name="Leelawadee Bold" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/LoginFormLogo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
       </Pane>
    </children>

@@ -1,1 +1,262 @@
-<?xml version="1.0" encoding="UTF-8"?><?import java.lang.*?><?import java.util.*?><?import javafx.scene.*?><?import javafx.scene.control.*?><?import javafx.scene.layout.*?><AnchorPane xmlns="http://javafx.com/javafx"            xmlns:fx="http://javafx.com/fxml"            fx:controller="sample.demo2.AdminViewSinglePatientController"            prefHeight="400.0" prefWidth="600.0"></AnchorPane>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="779.0" prefWidth="1073.0" styleClass="bg-white" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.demo2.AdminViewSinglePatientController">
+   <children>
+      <Pane layoutX="119.0" layoutY="216.0" prefHeight="489.0" prefWidth="857.0">
+         <children>
+            <Line endX="752.0" layoutX="102.0" layoutY="49.0" opacity="0.32" startX="-100.0" stroke="#3964db8a" strokeWidth="2.0" />
+            <Line endX="752.0" layoutX="101.0" layoutY="107.0" opacity="0.32" startX="-100.0" stroke="#3964db8a" strokeWidth="2.0" />
+            <Line endX="752.0" layoutX="102.0" layoutY="162.0" opacity="0.32" startX="-100.0" stroke="#3964db8a" strokeWidth="2.0" />
+            <Line endX="756.0" layoutX="101.0" layoutY="219.0" opacity="0.32" startX="-100.0" stroke="#3964db8a" strokeWidth="2.0" />
+            <Line endX="756.0" layoutX="101.0" layoutY="272.0" opacity="0.32" startX="-100.0" stroke="#3964db8a" strokeWidth="2.0" />
+            <Line endX="120.0" endY="171.0" layoutX="213.0" layoutY="317.0" opacity="0.32" startX="120.0" startY="-315.0" stroke="#2d55b9" strokeWidth="3.0" />
+            <Label layoutX="80.0" layoutY="8.0" text="Patient ID" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="79.0" layoutY="61.0" text="Name" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="79.0" layoutY="117.0" text="Phone Number" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="79.0" layoutY="172.0" text="Email Address" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="79.0" layoutY="282.0" text="House No/Street" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="79.0" layoutY="337.0" text="City" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="id" layoutX="379.0" layoutY="10.0" prefHeight="32.0" prefWidth="430.0" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Regular" size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label fx:id="patientName" layoutX="378.0" layoutY="63.0" prefHeight="32.0" prefWidth="430.0" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Regular" size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label fx:id="patientPhone" layoutX="378.0" layoutY="119.0" prefHeight="32.0" prefWidth="430.0" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Regular" size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label fx:id="patientEmail" layoutX="378.0" layoutY="174.0" prefHeight="32.0" prefWidth="430.0" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Regular" size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label fx:id="patientDepartment" layoutX="378.0" layoutY="231.0" prefHeight="32.0" prefWidth="430.0" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Regular" size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label layoutX="79.0" layoutY="389.0" text="CNIC" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="80.0" layoutY="443.0" text="Age" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="79.0" layoutY="227.0" text="Department" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Bold" size="18.0" />
+               </font>
+            </Label>
+            <Line endX="755.0" layoutX="101.0" layoutY="326.0" opacity="0.32" startX="-100.0" stroke="#3964db8a" strokeWidth="2.0" />
+            <Line endX="752.0" layoutX="102.0" layoutY="381.0" opacity="0.32" startX="-100.0" stroke="#3964db8a" strokeWidth="2.0" />
+            <Line endX="752.0" layoutX="102.0" layoutY="436.0" opacity="0.32" startX="-100.0" stroke="#3964db8a" strokeWidth="2.0" />
+            <Label fx:id="patientAddress" layoutX="378.0" layoutY="283.0" prefHeight="32.0" prefWidth="430.0" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Regular" size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label fx:id="patientCity" layoutX="377.0" layoutY="337.0" prefHeight="32.0" prefWidth="430.0" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Regular" size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label fx:id="patientCnic" layoutX="377.0" layoutY="393.0" prefHeight="32.0" prefWidth="430.0" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Regular" size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label fx:id="patientAge" layoutX="376.0" layoutY="443.0" prefHeight="32.0" prefWidth="430.0" textFill="#2d55b9">
+               <font>
+                  <Font name="Dubai Regular" size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+         </children>
+         <styleClass>
+            <String fx:value="bg-white" />
+            <String fx:value="bg-rad-12" />
+         </styleClass>
+         <effect>
+            <DropShadow height="30.0" radius="14.5" width="30.0">
+               <color>
+                  <Color opacity="0.15000000596046448" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Pane>
+      <Pane layoutX="55.0" layoutY="103.0" prefHeight="81.0" prefWidth="959.0">
+         <children>
+            <Button layoutX="25.0" layoutY="19.0" mnemonicParsing="false" onAction="#toAllPatient" prefHeight="43.0" prefWidth="56.0" stylesheets="@css/blueButton.css" textFill="WHITE">
+               <font>
+                  <Font name="Leelawadee Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label layoutX="120.0" layoutY="28.0" text="Patient Details" textFill="#2d55b9">
+               <font>
+                  <Font name="Leelawadee Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+         <styleClass>
+            <String fx:value="bg-white" />
+            <String fx:value="bg-rad-12" />
+         </styleClass>
+         <effect>
+            <DropShadow height="30.0" radius="14.5" width="30.0">
+               <color>
+                  <Color opacity="0.15000000596046448" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Pane>
+      <Pane layoutX="18.0" layoutY="13.0" prefHeight="65.0" prefWidth="1038.0" style="-fx-background-color: #577CFF; -fx-background-radius: 10;">
+         <effect>
+            <DropShadow height="50.0" radius="24.5" width="50.0">
+               <color>
+                  <Color opacity="0.5" />
+               </color>
+            </DropShadow>
+         </effect>
+         <children>
+            <ImageView accessibleRole="BUTTON" fitHeight="57.0" fitWidth="58.0" layoutX="55.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/RAULogo.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Button layoutX="887.0" layoutY="12.0" mnemonicParsing="false" onAction="#logout" prefHeight="40.0" prefWidth="115.0" stylesheets="@css/whiteButton.css" text="Logout" textAlignment="CENTER" textFill="#2d55b9">
+               <font>
+                  <Font name="Leelawadee Bold" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/Logout.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="284.0" layoutY="9.0" mnemonicParsing="false" onAction="#toAdminHome" prefHeight="45.0" prefWidth="90.0" stylesheets="@css/navLink.css" text="Home">
+               <font>
+                  <Font name="Leelawadee Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="374.0" layoutY="9.0" mnemonicParsing="false" onAction="#toAllAdmin" prefHeight="45.0" prefWidth="90.0" stylesheets="@css/navLink.css" text="Admin">
+               <font>
+                  <Font name="Leelawadee Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="464.0" layoutY="9.0" mnemonicParsing="false" onAction="#toAllDoctor" prefHeight="45.0" prefWidth="90.0" stylesheets="@css/navLink.css" text="Doctor">
+               <font>
+                  <Font name="Leelawadee Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="554.0" layoutY="9.0" mnemonicParsing="false" onAction="#toAllPatient" prefHeight="45.0" prefWidth="90.0" style="-fx-opacity: 1;" stylesheets="@css/navLink.css" text="Patient">
+               <font>
+                  <Font name="Leelawadee Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

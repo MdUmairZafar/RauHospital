@@ -1,6 +1,5 @@
 package sample.demo2;
 
-import Model.PatientAppointment;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -41,55 +40,14 @@ public class PatientHomeController implements Initializable {
     private Label invalidLabelChangePwd, validLabelChangePwd, patName, patAge, patPhone, patEmail, patId, patCnic;
     @FXML
     private VBox appointmentTable;
-
-    private static String userEmail;
     
-    DatabaseConnection database = new DatabaseConnection();
-    private String patientId = database.getPatIdWithEmail( userEmail );
-    private ObservableList<String> doctorIds = database.getAppointDocIdsWithPatID(patientId);
-    private ObservableList<String> doctorNames = docIdsToName(doctorIds);
-    private ObservableList<String> dates = database.getAppointDateWithPatID(patientId);
-    private ObservableList<String> times = database.getAppointTimeWithPatID(patientId);
-    private ObservableList<String> prescriptions = database.getAppointPrescWithPatID(patientId);
+    DatabaseConnection database = DatabaseConnection.getInstance ();
     
-    
-    
-    public static void setUserEmail ( String email) {
-        PatientHomeController.userEmail = email;
-    }
     
     @Override
     public void initialize ( URL url, ResourceBundle resourceBundle ) {
         try {
-            
-            String name = database.getPatNamWithPatId ( patientId );
-            String cnic = database.getPatCnicWithPatId (patientId);
-            String phone = database.getPatPhoneWithPatId (patientId);
-            String age = database.getPatAgeWithPatId (patientId);
-            
-            patName.setText ( name );
-            patAge.setText ( age );
-            patCnic.setText ( cnic );
-            patPhone.setText ( phone );
-            patId.setText ( patientId );
-            patEmail.setText ( userEmail );
-            
-                        
-            List <PatientAppointment> appointmentList = new ArrayList <> ( appointments () );
-            
-            for ( PatientAppointment appointment : appointmentList ) {
-                FXMLLoader fxmlLoader = new FXMLLoader ();
-                fxmlLoader.setLocation ( getClass ().getResource ( "patientAppointmentItem.fxml" ) );
-                
-                try {
-                    HBox hBox = fxmlLoader.load ();
-                    PatientAppointmentItemController appointmentItem = fxmlLoader.getController ();
-                    appointmentItem.loadAppointment ( appointment );
-                    appointmentTable.getChildren ().add ( hBox );
-                } catch ( IOException e ) {
-                    System.out.println ( e.getMessage () );
-                }
-            }
+        
         } catch (Exception e) {
                 e.printStackTrace ();
         }
@@ -189,12 +147,11 @@ public class PatientHomeController implements Initializable {
     
     public void updatePassword () {
         try {
-            DatabaseConnection connectNow = new DatabaseConnection();
-            Connection connectDB = connectNow.getConnection();
+            Connection connectDB = database.getConnection();
 
             PreparedStatement statement = connectDB.prepareStatement(DatabaseConnection.updateQuery );
             statement.setString(1, changePwdNewHome.getText());
-            statement.setString(2, userEmail );
+            statement.setString(2, DatabaseConnection.user );
             statement.setString(3, changePwdCurrentHome.getText());
 
             int change = statement.executeUpdate();
@@ -219,38 +176,7 @@ public class PatientHomeController implements Initializable {
     
     
     
-    
 
-    private ObservableList<String> docIdsToName (ObservableList<String> doctorIds) {
-        ObservableList<String> docNames = FXCollections.observableArrayList();
-
-        for(String id: doctorIds) {
-            docNames.add(database.getDocNameWithDocId(id));
-        }
-
-        return docNames;
-    }
-    
-
-
-    private List <PatientAppointment> appointments() throws SQLException {
-        int count =0, index = 0;
-        
-        List<PatientAppointment> appointmentList = new ArrayList <> ();
-
-        for(String time: times) {
-            PatientAppointment appointment = new PatientAppointment ();
-            appointment.setSrNo ( ++count );
-            appointment.setName ( doctorNames.get(index) );
-            appointment.setDate ( dates.get(index) );
-            appointment.setTime ( time );
-            appointment.setPrescription ( prescriptions.get(index) );
-            appointmentList.add ( appointment );
-            index++;
-        }
-        
-        return appointmentList;
-    }
 
     
     
