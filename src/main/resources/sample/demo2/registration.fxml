@@ -19,9 +19,9 @@
    <children>
       <Pane layoutX="50.0" layoutY="135.0" prefHeight="542.0" prefWidth="971.0">
          <effect>
-            <DropShadow height="47.75" radius="23.1875" width="47.0">
+            <DropShadow height="47.1" radius="23.025" width="47.0">
                <color>
-                  <Color opacity="0.5" />
+                  <Color opacity="0.15000000596046448" />
                </color>
             </DropShadow>
          </effect>
@@ -116,7 +116,7 @@
                   <String fx:value="btm-border" />
                </styleClass>
             </TextField>
-            <Button fx:id="registerButtonFormRegister" contentDisplay="CENTER" layoutX="407.0" layoutY="470.0" onAction="#registerAction" prefHeight="43.0" prefWidth="157.0" stylesheets="@css/blueButton.css" text="REGISTER" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="registerButtonFormRegister" layoutX="407.0" layoutY="470.0" onAction="#registerAction" prefHeight="43.0" prefWidth="157.0" stylesheets="@css/blueButton.css" text="Register" textFill="WHITE">
                <font>
                   <Font name="Leelawadee Bold" size="19.0" />
                </font>
@@ -130,6 +130,13 @@
                      </color>
                   </DropShadow>
                </effect>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/RegisterFormLogo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
             <ImageView fitHeight="30.0" fitWidth="20.0" layoutX="853.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -193,7 +200,7 @@
                   </DropShadow>
                </effect>
             </ImageView>
-            <Label fx:id="invalidLabelRegister" layoutY="424.0" prefHeight="35.0" prefWidth="971.0" style="-fx-alignment: center;" textAlignment="CENTER" textFill="#001973">
+            <Label fx:id="invalidLabelRegister" layoutY="424.0" prefHeight="35.0" prefWidth="971.0" style="-fx-alignment: center; -fx-text-fill: #eb1111b5;" textAlignment="CENTER" textFill="#001973">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
@@ -204,37 +211,6 @@
             <String fx:value="bg-rad-12" />
             <String fx:value="card-border" />
          </styleClass>
-      </Pane>
-      <Pane layoutY="736.0" prefHeight="43.0" prefWidth="1073.0" style="-fx-background-color: WHITE;">
-         <effect>
-            <DropShadow height="10.38" radius="3.5600000000000005" width="5.86">
-               <color>
-                  <Color opacity="0.5648854970932007" />
-               </color>
-            </DropShadow>
-         </effect>
-         <children>
-            <Label layoutX="29.0" layoutY="11.0" text="© 2023 RAU Hospitals. All rights reserved." textFill="#4070ff">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </Label>
-            <Label layoutX="664.0" layoutY="13.0" text="Make Appointment             desk@rau.com           042 444 777 333" textFill="#5d6179">
-               <font>
-                  <Font name="System Bold Italic" size="12.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="779.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/EmailLogo.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="34.0" fitWidth="30.0" layoutX="900.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/PhoneLogo.png" />
-               </image>
-            </ImageView>
-         </children>
       </Pane>
       <Pane layoutX="18.0" layoutY="12.0" prefHeight="65.0" prefWidth="1038.0" style="-fx-background-color: #577CFF; -fx-background-radius: 10;">
          <effect>
@@ -307,6 +283,37 @@
                   </ImageView>
                </graphic>
             </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="20.0" layoutY="756.0" prefHeight="43.0" prefWidth="1073.0" styleClass="bg-white" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+         <effect>
+            <DropShadow height="10.38" radius="3.5600000000000005" width="5.86">
+               <color>
+                  <Color opacity="0.5648854970932007" />
+               </color>
+            </DropShadow>
+         </effect>
+         <children>
+            <Label layoutX="29.0" layoutY="11.0" text="© 2023 RAU Hospitals. All rights reserved." textFill="#4070ff">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="712.0" layoutY="13.0" text="Contact Us             desk@rau.com           042 444 777 333" textFill="#5d6179">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="779.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/EmailLogo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="34.0" fitWidth="30.0" layoutX="900.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/PhoneLogo.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
    </children>

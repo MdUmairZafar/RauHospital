@@ -31,7 +31,7 @@ public class LoginController {
     @FXML
     private CheckBox patientCheckBox, doctorCheckBox, adminCheckBox;
 
-    //Gloabl Variables
+    //Global Variables
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -119,8 +119,8 @@ public class LoginController {
         else {
             setFieldsEmpty ();
             invalidCredLabelLogin.setText("Invalid Login Credentials!");
-            emailFormLogin.setStyle("-fx-border-color: red;");
-            passwordFormLogin.setStyle("-fx-border-color: red;");
+            emailFormLogin.setStyle("-fx-border-color: #eb1111b5;");
+            passwordFormLogin.setStyle("-fx-border-color: #eb1111b5;");
 
         }
     }
@@ -139,14 +139,15 @@ public class LoginController {
             ResultSet queryResult = statement.executeQuery();
 
             if(queryResult.next()) {
+                PatientHomeController.setPatientId ( queryResult.getString ( "id" ) );
                 invalidCredLabelLogin.setText("");
                 toPatientHomePage ();
 
             } else {
                 setFieldsEmpty ();
                 invalidCredLabelLogin.setText("INVALID LOGIN CREDENTIALS!");
-                emailFormLogin.setStyle("-fx-border-color: red;");
-                passwordFormLogin.setStyle("-fx-border-color: red;");
+                emailFormLogin.setStyle("-fx-border-color: #eb1111b5;");
+                passwordFormLogin.setStyle("-fx-border-color: #eb1111b5;");
             }
 
             connectDB.close();
@@ -169,14 +170,15 @@ public class LoginController {
             ResultSet queryResult = statement.executeQuery();
             
             if(queryResult.next()) {
+                DoctorHomeController.setDoctorId ( queryResult.getString ( "id" ) );
                 invalidCredLabelLogin.setText("");
                 toDoctorHomePage ();
                 
             } else {
                 setFieldsEmpty ();
                 invalidCredLabelLogin.setText("INVALID LOGIN CREDENTIALS!");
-                emailFormLogin.setStyle("-fx-border-color: red;");
-                passwordFormLogin.setStyle("-fx-border-color: red;");
+                emailFormLogin.setStyle("-fx-border-color: #eb1111b5;");
+                passwordFormLogin.setStyle("-fx-border-color: #eb1111b5;");
             }
             
             connectDB.close();
@@ -199,14 +201,15 @@ public class LoginController {
             ResultSet queryResult = statement.executeQuery();
             
             if(queryResult.next()) {
+
                 invalidCredLabelLogin.setText("");
                 toAdminHomePage ();
                 
             } else {
                 setFieldsEmpty ();
                 invalidCredLabelLogin.setText("INVALID LOGIN CREDENTIALS!");
-                emailFormLogin.setStyle("-fx-border-color: red;");
-                passwordFormLogin.setStyle("-fx-border-color: red;");
+                emailFormLogin.setStyle("-fx-border-color: #eb1111b5;");
+                passwordFormLogin.setStyle("-fx-border-color: #eb1111b5;");
             }
             
             connectDB.close();

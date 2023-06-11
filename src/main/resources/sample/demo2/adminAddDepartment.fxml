@@ -4,8 +4,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -14,33 +13,12 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="779.0" prefWidth="1073.0" styleClass="bg-white" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.demo2.AdminAllAppointmentController">
+
+<AnchorPane prefHeight="779.0" prefWidth="1073.0" styleClass="bg-white" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.demo2.AdminAddDepartmentController">
    <children>
-      <Pane prefHeight="781.0" prefWidth="1074.0">
+      <Pane layoutX="54.0" layoutY="98.0" prefHeight="81.0" prefWidth="959.0">
          <children>
-            <TableView fx:id="appointmentTable" layoutX="54.0" layoutY="203.0" prefHeight="505.0" prefWidth="967.0" styleClass="center-text" stylesheets="@css/tableStyle.css">
-               <columns>
-                  <TableColumn fx:id="srNo" prefWidth="58.0" text="Sr. #" />
-                  <TableColumn fx:id="aptId" prefWidth="100.66667175292969" text="Apt. ID" />
-                  <TableColumn fx:id="patientName" prefWidth="220.0" text="Patient Name" />
-                  <TableColumn fx:id="doctorName" prefWidth="208.0" text="Doctor Name" />
-                  <TableColumn fx:id="aptDate" prefWidth="230.0" text="Date" />
-                  <TableColumn fx:id="viewButton" prefWidth="81.0" text="View" />
-                  <TableColumn fx:id="deleteButton" minWidth="0.0" prefWidth="66.0" text="Delete" />
-               </columns>
-               <effect>
-                  <DropShadow height="30.0" radius="14.5" width="30.0">
-                     <color>
-                        <Color opacity="0.15000000596046448" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </TableView>
-         </children>
-      </Pane>
-      <Pane layoutX="53.0" layoutY="102.0" prefHeight="81.0" prefWidth="971.0">
-         <children>
-            <Button layoutX="25.0" layoutY="19.0" mnemonicParsing="false" onAction="#toAdminHome" prefHeight="43.0" prefWidth="56.0" stylesheets="@css/backButton.css" textFill="WHITE">
+            <Button layoutX="25.0" layoutY="19.0" mnemonicParsing="false" onAction="#toAllDepartment" prefHeight="43.0" prefWidth="56.0" stylesheets="@css/backButton.css" textFill="WHITE">
                <font>
                   <Font name="Leelawadee Bold" size="18.0" />
                </font>
@@ -55,7 +33,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Label layoutX="92.0" layoutY="27.0" text="Appointment List" textFill="#2d55b9">
+            <Label layoutX="96.0" layoutY="28.0" text="Add Department" textFill="#2d55b9">
                <font>
                   <Font name="Leelawadee Bold" size="24.0" />
                </font>
@@ -74,7 +52,7 @@
             </DropShadow>
          </effect>
       </Pane>
-      <Pane layoutX="19.0" layoutY="14.0" prefHeight="65.0" prefWidth="1038.0" style="-fx-background-color: #577CFF; -fx-background-radius: 10;">
+      <Pane layoutX="17.0" layoutY="10.0" prefHeight="65.0" prefWidth="1038.0" style="-fx-background-color: #577CFF; -fx-background-radius: 10;">
          <effect>
             <DropShadow height="50.0" radius="24.5" width="50.0">
                <color>
@@ -114,7 +92,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="374.0" layoutY="9.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="90.0" stylesheets="@css/navLink.css" text="Admin">
+            <Button layoutX="374.0" layoutY="9.0" mnemonicParsing="false" onAction="#toAllAdmin" prefHeight="45.0" prefWidth="90.0" stylesheets="@css/navLink.css" text="Admin">
                <font>
                   <Font name="Leelawadee Bold" size="18.0" />
                </font>
@@ -140,7 +118,7 @@
             </Button>
          </children>
       </Pane>
-      <Pane layoutX="20.0" layoutY="756.0" prefHeight="43.0" prefWidth="1073.0" styleClass="bg-white" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+      <Pane layoutX="3.0" layoutY="755.0" prefHeight="43.0" prefWidth="1073.0" styleClass="bg-white" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
          <effect>
             <DropShadow height="10.38" radius="3.5600000000000005" width="5.86">
                <color>
@@ -170,6 +148,75 @@
                </image>
             </ImageView>
          </children>
+      </Pane>
+      <Pane layoutX="265.0" layoutY="248.0" prefHeight="250.0" prefWidth="582.0">
+         <effect>
+            <DropShadow height="50.0" radius="24.5" width="50.0">
+               <color>
+                  <Color opacity="0.15000000596046448" />
+               </color>
+            </DropShadow>
+         </effect>
+         <children>
+            <Button fx:id="addDepartmentButton" graphicTextGap="5.0" layoutX="210.0" layoutY="155.0" onAction="#addDepartmentAction" prefHeight="43.0" prefWidth="180.0" stylesheets="@css/blueButton.css" text="Add Now" textFill="WHITE">
+               <font>
+                  <Font name="Leelawadee Bold" size="19.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow height="15.14" radius="6.3375" width="12.21">
+                     <color>
+                        <Color opacity="0.5" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/DepartmentPictureAdmin.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <ImageView fitHeight="43.0" fitWidth="30.0" layoutX="383.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/DepartmentPictureAdminDark.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="43.0" fitWidth="44.0" layoutX="278.0" layoutY="-29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/LoginFormLogo.png" />
+               </image>
+               <effect>
+                  <DropShadow height="18.19" offsetY="2.0" radius="10.6425" width="26.38">
+                     <color>
+                        <Color opacity="0.0" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </ImageView>
+            <TextField fx:id="departmentName" layoutX="125.0" layoutY="49.0" prefHeight="50.0" prefWidth="370.0" promptText="Department Name">
+               <font>
+                  <Font name="Leelawadee Bold" size="15.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="bg-white" />
+                  <String fx:value="bg-rad-12" />
+                  <String fx:value="btm-border" />
+               </styleClass>
+            </TextField>
+            <Label fx:id="invalidLabel" layoutX="15.0" layoutY="105.0" prefHeight="35.0" prefWidth="550.0" style="-fx-alignment: center;" textAlignment="CENTER" textFill="#eb1111b5">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
+         <styleClass>
+            <String fx:value="bg-white" />
+            <String fx:value="bg-rad-12" />
+         </styleClass>
       </Pane>
    </children>
 </AnchorPane>

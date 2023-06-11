@@ -1,39 +1,262 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.demo2.PatientMakeAppointmentController">
+<AnchorPane maxHeight="779.0" maxWidth="1073.0" minHeight="779.0" minWidth="1073.0" prefHeight="779.0" prefWidth="1073.0" styleClass="bg-white" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.demo2.PatientMakeAppointmentController">
    <children>
-      <TableView layoutX="35.0" layoutY="113.0" prefHeight="200.0" prefWidth="520.0" style="-fx-background-radius: 8;" stylesheets="@css/style.css">
-        <columns>
-          <TableColumn prefWidth="38.0" text="#" />
-          <TableColumn prefWidth="112.0" text="Pat ID" />
-            <TableColumn prefWidth="214.0" text="Pat Name" />
-            <TableColumn prefWidth="150.0" text=" " />
-        </columns>
+      <Pane layoutX="519.0" layoutY="234.0" prefHeight="444.0" prefWidth="508.0">
          <effect>
             <DropShadow height="50.0" radius="24.5" width="50.0">
                <color>
-                  <Color opacity="0.30000001192092896" />
+                  <Color opacity="0.20000000298023224" />
                </color>
             </DropShadow>
          </effect>
-      </TableView>
-      <Button layoutX="149.0" layoutY="47.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="146.0" styleClass="blue-btn" stylesheets="@css/style.css" text="Button" textFill="WHITE">
-         <font>
-            <Font name="System Bold Italic" size="20.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
+         <children>
+            <ComboBox fx:id="departmentField" layoutX="75.0" layoutY="70.0" onAction="#setDoctor" prefHeight="50.0" prefWidth="370.0" promptText="Department Name">
+               <styleClass>
+                  <String fx:value="bg-white" />
+                  <String fx:value="bg-rad-12" />
+                  <String fx:value="bg-border" />
+               </styleClass>
+            </ComboBox>
+            <Button fx:id="makeAppointmentButton" graphicTextGap="5.0" layoutX="146.0" layoutY="359.0" onAction="#makeAppointmentAction" prefHeight="43.0" prefWidth="236.0" stylesheets="@css/blueButton.css" text="Make Appointment" textFill="WHITE">
+               <font>
+                  <Font name="Leelawadee Bold" size="19.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow height="15.14" radius="6.3375" width="12.21">
+                     <color>
+                        <Color opacity="0.5" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/LoginFormLogo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <ImageView fitHeight="43.0" fitWidth="30.0" layoutX="388.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/DepartmentPictureAdminDark.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="43.0" fitWidth="44.0" layoutX="234.0" layoutY="-23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/LoginFormLogo.png" />
+               </image>
+               <effect>
+                  <DropShadow height="18.19" offsetY="2.0" radius="10.6425" width="26.38">
+                     <color>
+                        <Color opacity="0.0" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </ImageView>
+            <Label fx:id="invalidLabel" layoutX="2.0" layoutY="320.0" prefHeight="35.0" prefWidth="504.0" style="-fx-alignment: center;" textAlignment="CENTER" textFill="#eb1111b5">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="doctorField" layoutX="75.0" layoutY="130.0" prefHeight="50.0" prefWidth="370.0" promptText="Doctor Name">
+               <styleClass>
+                  <String fx:value="bg-white" />
+                  <String fx:value="bg-rad-12" />
+                  <String fx:value="bg-border" />
+               </styleClass>
+            </ComboBox>
+            <ComboBox fx:id="timeField" layoutX="75.0" layoutY="257.0" prefHeight="50.0" prefWidth="370.0" promptText="Time">
+               <styleClass>
+                  <String fx:value="bg-white" />
+                  <String fx:value="bg-rad-12" />
+                  <String fx:value="bg-border" />
+               </styleClass>
+            </ComboBox>
+            <ImageView fitHeight="27.0" fitWidth="20.0" layoutX="392.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/NameLogo.png" />
+               </image>
+            </ImageView>
+            <DatePicker fx:id="dateField" editable="false" layoutX="75.0" layoutY="192.0" prefHeight="50.0" prefWidth="370.0" promptText="Date">
+               <styleClass>
+                  <String fx:value="bg-white" />
+                  <String fx:value="btm-border" />
+                  <String fx:value="bg-border" />
+               </styleClass>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </DatePicker>
+            <ImageView fitHeight="43.0" fitWidth="30.0" layoutX="388.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/AgeLogo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="43.0" fitWidth="30.0" layoutX="388.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/AgeLogo.png" />
+               </image>
+            </ImageView>
+         </children>
+         <styleClass>
+            <String fx:value="bg-white" />
+            <String fx:value="bg-rad-12" />
+         </styleClass>
+      </Pane>
+      <Pane layoutY="736.0" prefHeight="43.0" prefWidth="1073.0" styleClass="bg-white">
+         <effect>
+            <DropShadow height="10.38" radius="3.5600000000000005" width="5.86">
+               <color>
+                  <Color opacity="0.5648854970932007" />
+               </color>
+            </DropShadow>
+         </effect>
+         <children>
+            <Label layoutX="29.0" layoutY="11.0" text="© 2023 RAU Hospitals. All rights reserved." textFill="#4070ff">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="712.0" layoutY="13.0" text="Contact Us             desk@rau.com           042 444 777 333" textFill="#5d6179">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="779.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/EmailLogo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="34.0" fitWidth="30.0" layoutX="900.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/PhoneLogo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="65.0" layoutY="111.0" prefHeight="81.0" prefWidth="959.0">
+         <children>
+            <Button layoutX="25.0" layoutY="19.0" mnemonicParsing="false" onAction="#toPatientHome" prefHeight="43.0" prefWidth="56.0" stylesheets="@css/backButton.css" textFill="WHITE">
+               <font>
+                  <Font name="Leelawadee Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label layoutX="94.0" layoutY="28.0" text="Make Appointment" textFill="#2d55b9">
+               <font>
+                  <Font name="Leelawadee Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+         <styleClass>
+            <String fx:value="bg-white" />
+            <String fx:value="bg-rad-12" />
+            <String fx:value="card-border" />
+         </styleClass>
+         <effect>
+            <DropShadow height="30.0" radius="14.5" width="30.0">
+               <color>
+                  <Color opacity="0.15000000596046448" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Pane>
+      <ImageView fitHeight="450.0" fitWidth="395.0" layoutX="53.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/LoginFrontImage.png" />
+         </image>
+         <effect>
+            <DropShadow height="108.93" offsetX="5.0" offsetY="5.0" radius="48.835" width="88.41">
+               <color>
+                  <Color opacity="0.7519084215164185" />
+               </color>
+            </DropShadow>
+         </effect>
+      </ImageView>
+      <Pane layoutX="18.0" layoutY="12.0" prefHeight="65.0" prefWidth="1038.0" style="-fx-background-color: #577CFF; -fx-background-radius: 10;">
+         <effect>
+            <DropShadow height="50.0" radius="24.5" width="50.0">
+               <color>
+                  <Color opacity="0.5" />
+               </color>
+            </DropShadow>
+         </effect>
+         <children>
+            <ImageView accessibleRole="BUTTON" fitHeight="57.0" fitWidth="58.0" layoutX="55.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/RAULogo.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Button layoutX="887.0" layoutY="12.0" mnemonicParsing="false" onAction="#logout" prefHeight="40.0" prefWidth="115.0" stylesheets="@css/whiteButton.css" text="Logout" textAlignment="CENTER" textFill="#2d55b9">
+               <font>
+                  <Font name="Leelawadee Bold" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/Logout.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="284.0" layoutY="9.0" mnemonicParsing="false" onAction="#toPatientHome" prefHeight="45.0" prefWidth="90.0" stylesheets="@css/navLink.css" text="Home">
+               <font>
+                  <Font name="Leelawadee Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="377.0" layoutY="9.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="124.0" stylesheets="@css/navLink.css" text="About Us">
+               <font>
+                  <Font name="Leelawadee Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="498.0" layoutY="9.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="124.0" stylesheets="@css/navLink.css" text="Services">
+               <font>
+                  <Font name="Leelawadee Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

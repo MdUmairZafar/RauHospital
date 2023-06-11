@@ -5,6 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Button;
 
+import javax.print.Doc;
 import java.sql.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -381,10 +382,45 @@ public class DatabaseConnection {
         return false;
     }
     
+    public final ObservableList<Doctor> getDoctorByDepartment (String id) {
+        int count = 0;
+        ObservableList<Doctor> doctorList = FXCollections.observableArrayList ();
+        try {
+            Connection connectDB = this.getConnection ();
+            String query = "SELECT * FROM `doctor` WHERE `department_id` = ?";
+            PreparedStatement statement = connectDB.prepareStatement ( query );
+            statement.setString ( 1, id );
+            
+            ResultSet resultSet = statement.executeQuery ();
+            while (resultSet.next ()) {
+                count++;
+                Doctor doctor = new Doctor (
+                        "" + count,
+                        resultSet.getString ( "fname" ) + " " + resultSet.getString ( "lname" ),
+                        resultSet.getString ( "phone" ),
+                        resultSet.getString("email"),
+                        resultSet.getString ( "id" ),
+                        resultSet.getString("house_no"),
+                        resultSet.getString("city"),
+                        calculateAge ( resultSet.getTimestamp ( "dob" ) ),
+                        resultSet.getString ( "cnic" ),
+                        resultSet.getString ( "department_id" ),
+                        new Button(),
+                        new Button(),
+                        new Button ()
+                );
+                doctorList.add ( doctor );
+                
+            }
+        } catch (Exception e) {
+            System.out.println ( e.getMessage () );;
+        }
+        return doctorList;
+    }
+    
+    
     
     //=======================Department Functions ==========================//
-    
-    
     public final Department getDepartmentById ( String id) {
         int count = 0;
         Department department = null;
@@ -402,7 +438,6 @@ public class DatabaseConnection {
                         "" + count,
                         resultSet.getString ( "name" ),
                         resultSet.getString ( "id" ),
-                        new Button(),
                         new Button(),
                         new Button ()
                 );
@@ -431,7 +466,6 @@ public class DatabaseConnection {
                         "" + count,
                         resultSet.getString ( "name" ),
                         resultSet.getString ( "id" ),
-                        new Button(),
                         new Button(),
                         new Button ()
                 );
@@ -485,7 +519,7 @@ public class DatabaseConnection {
     public final void addDepartment (String name) {
         try {
             Connection connectDB = this.getConnection ();
-            String query = "INSERT INTO `department` (`name`) VALUES (?)";
+            String query = "INSERT INTO `department` (`name`) VALUES (?) ";
             PreparedStatement statement = connectDB.prepareStatement ( query );
             statement.setString ( 1, name );
             
@@ -494,6 +528,23 @@ public class DatabaseConnection {
         } catch (Exception e) {
             System.out.println ( e.getMessage () );;
         }
+    }
+    
+    public final boolean departmentExist (String name) {
+        try {
+            Connection connectDB = this.getConnection ();
+            String query = "SELECT * FROM department WHERE name = ?";
+            PreparedStatement statement = connectDB.prepareStatement ( query );
+            statement.setString ( 1, name );
+            
+            ResultSet resultSet = statement.executeQuery ();
+            if (resultSet.next())
+                return true;
+            
+        } catch (Exception e) {
+            System.out.println ( e.getMessage () );;
+        }
+        return false;
     }
     
     public final boolean departmentRegistered (String name) {
@@ -662,6 +713,7 @@ public class DatabaseConnection {
                         resultSet.getBoolean ("visited"),
                         resultSet.getString ( "prescription" ),
                         new Button(),
+                        new Button (),
                         new Button ()
                 );
                 appointmentList.add(appointment);
@@ -701,6 +753,7 @@ public class DatabaseConnection {
                         resultSet.getBoolean ("visited"),
                         resultSet.getString ( "prescription" ),
                         new Button(),
+                        new Button (),
                         new Button ()
                 );
                 
@@ -711,6 +764,121 @@ public class DatabaseConnection {
         }
         return appointment;
     }
+    
+    public final ObservableList<Appointment> getAllAppointmentByDoctor (String id) {
+        ObservableList<Appointment> appointmentList = FXCollections.observableArrayList ();
+        int count = 0;
+        try {
+            Connection connectDB = this.getConnection ();
+            String query = "SELECT * FROM `appointment` WHERE deleted_at IS NULL AND `doctor_id` = ?";
+            PreparedStatement statement = connectDB.prepareStatement ( query );
+            statement.setString ( 1, id );
+            
+            ResultSet resultSet = statement.executeQuery ();
+            while (resultSet.next ()) {
+                
+                Patient patient = getPatientById ( resultSet.getString ( "patient_id" ) );
+                Doctor doctor = getDoctorById ( resultSet.getString ( "doctor_id" ) );
+                Department department = getDepartmentById ( resultSet.getString ( "department_id" ) );
+                Timestamp timestamp = resultSet.getTimestamp ("time");
+                count++;
+                Appointment appointment = new Appointment (
+                        "" + count,
+                        resultSet.getString("id"),
+                        patient.getName (),
+                        doctor.getName (),
+                        department.getName (),
+                        timestamp.toLocalDateTime ().toLocalTime ().toString (),
+                        timestamp.toLocalDateTime().toLocalDate ().toString (),
+                        resultSet.getBoolean ("visited"),
+                        resultSet.getString ( "prescription" ),
+                        new Button(),
+                        new Button (),
+                        new Button ()
+                );
+                appointmentList.add ( appointment );
+                
+            }
+        } catch (Exception e) {
+            System.out.println ( e.getMessage () );;
+        }
+        return appointmentList;
+    }
+    public final ObservableList<Appointment> getAllAppointmentByPatient (String id) {
+        ObservableList<Appointment> appointmentList = FXCollections.observableArrayList ();
+        int count = 0;
+        try {
+            Connection connectDB = this.getConnection ();
+            String query = "SELECT * FROM `appointment` WHERE deleted_at IS NULL AND `patient_id` = ?";
+            PreparedStatement statement = connectDB.prepareStatement ( query );
+            statement.setString ( 1, id );
+            
+            ResultSet resultSet = statement.executeQuery ();
+            while (resultSet.next ()) {
+                
+                Patient patient = getPatientById ( resultSet.getString ( "patient_id" ) );
+                Doctor doctor = getDoctorById ( resultSet.getString ( "doctor_id" ) );
+                Department department = getDepartmentById ( resultSet.getString ( "department_id" ) );
+                Timestamp timestamp = resultSet.getTimestamp ("time");
+                count++;
+                Appointment appointment = new Appointment (
+                        "" + count,
+                        resultSet.getString("id"),
+                        patient.getName (),
+                        doctor.getName (),
+                        department.getName (),
+                        timestamp.toLocalDateTime ().toLocalTime ().toString (),
+                        timestamp.toLocalDateTime().toLocalDate ().toString (),
+                        resultSet.getBoolean ("visited"),
+                        resultSet.getString ( "prescription" ),
+                        new Button(),
+                        new Button (),
+                        new Button ()
+                );
+                appointmentList.add ( appointment );
+                
+            }
+        } catch (Exception e) {
+            System.out.println ( e.getMessage () );;
+        }
+        return appointmentList;
+    }
+    
+    public final boolean appointmentExist (String departmentId, String doctorId, String time) {
+        int count = 0;
+        try {
+            Connection connectDB = this.getConnection ();
+            String query = "SELECT * FROM `appointment` WHERE deleted_at IS NULL AND `department_id` = ? AND doctor_id = ? AND time = ?;";
+            PreparedStatement statement = connectDB.prepareStatement ( query );
+            statement.setString ( 1, departmentId );
+            statement.setString ( 2, doctorId );
+            statement.setString ( 3, time );
+            
+            ResultSet resultSet = statement.executeQuery ();
+            while (resultSet.next ()) {
+                return  true;
+            }
+        } catch (Exception e) {
+            System.out.println ( e.getMessage () );
+        }
+        return false;
+    }
+    
+    public final void updateAppointmentById (String id, String prescription) {
+        try {
+            Connection connectDB = this.getConnection ();
+            
+            String query = "UPDATE appointment SET prescription = ?, visited = 1 WHERE id = ?;";
+            PreparedStatement statement = connectDB.prepareStatement ( query );
+            statement.setString ( 1, prescription );
+            statement.setString ( 2, id );
+            statement.executeUpdate ();
+        } catch ( Exception e ){
+            System.out.println (e.getMessage ());
+        }
+    }
+    
+    
     
     public final void deleteAppointmentById (String id) {
         try {
@@ -729,6 +897,108 @@ public class DatabaseConnection {
         } catch (Exception e) {
             System.out.println (e.getMessage ());
         }
+    }
+    
+    
+    
+    public final void makeAppointment (String patientId, String doctorId, String departmentId, String time) {
+        try {
+            Connection connectDB = this.getConnection ();
+            String query = "INSERT INTO `appointment` (`patient_id`, `doctor_id`, `department_id`, `time`, `visited`, `prescription`) VALUES (?, ?, ?, ?, ?, ?)";
+            PreparedStatement statement = connectDB.prepareStatement ( query );
+            statement.setString ( 1, patientId );
+            statement.setString ( 2, doctorId );
+            statement.setString ( 3, departmentId );
+            statement.setString ( 4, time );
+            statement.setString ( 5, "0" );
+            statement.setString ( 6, "" );
+            
+            statement.executeUpdate ();
+        } catch ( Exception e ) {
+            e.printStackTrace ();
+        }
+    }
+    
+    // Counting Functions
+    
+    public final Integer countDoctors() {
+        Integer doctorCount = null;
+        
+        try {
+            Connection connectDB = this.getConnection ();
+            String query = "SELECT count(*) FROM doctor;";
+            PreparedStatement statement = connectDB.prepareStatement ( query );
+            ResultSet resultSet = statement.executeQuery ();
+            while ( resultSet.next () )
+                doctorCount = resultSet.getInt ( 1 );
+        } catch ( Exception e ) {
+            System.out.println (e.getMessage ());
+        }
+        return doctorCount;
+    }
+    
+    public final Integer countAdmins() {
+        Integer doctorCount = null;
+        
+        try {
+            Connection connectDB = this.getConnection ();
+            String query = "SELECT count(*) FROM admin;";
+            PreparedStatement statement = connectDB.prepareStatement ( query );
+            ResultSet resultSet = statement.executeQuery ();
+            while ( resultSet.next () )
+                doctorCount = resultSet.getInt ( 1 );
+        } catch ( Exception e ) {
+            System.out.println (e.getMessage ());
+        }
+        return doctorCount;
+    }
+    
+    public final Integer countPatients() {
+        Integer doctorCount = null;
+        
+        try {
+            Connection connectDB = this.getConnection ();
+            String query = "SELECT count(*) FROM patient;";
+            PreparedStatement statement = connectDB.prepareStatement ( query );
+            ResultSet resultSet = statement.executeQuery ();
+            while ( resultSet.next () )
+                doctorCount = resultSet.getInt ( 1 );
+        } catch ( Exception e ) {
+            System.out.println (e.getMessage ());
+        }
+        return doctorCount;
+    }
+    
+    public final Integer countDepartments() {
+        Integer doctorCount = null;
+        
+        try {
+            Connection connectDB = this.getConnection ();
+            String query = "SELECT count(*) FROM department;";
+            PreparedStatement statement = connectDB.prepareStatement ( query );
+            ResultSet resultSet = statement.executeQuery ();
+            while ( resultSet.next () )
+                doctorCount = resultSet.getInt ( 1 );
+        } catch ( Exception e ) {
+            System.out.println (e.getMessage ());
+        }
+        return doctorCount;
+    }
+    
+    public final Integer countAppointments() {
+        Integer doctorCount = null;
+        
+        try {
+            Connection connectDB = this.getConnection ();
+            String query = "SELECT count(*) FROM appointment;";
+            PreparedStatement statement = connectDB.prepareStatement ( query );
+            ResultSet resultSet = statement.executeQuery ();
+            while ( resultSet.next () )
+                doctorCount = resultSet.getInt ( 1 );
+        } catch ( Exception e ) {
+            System.out.println (e.getMessage ());
+        }
+        return doctorCount;
     }
     
     

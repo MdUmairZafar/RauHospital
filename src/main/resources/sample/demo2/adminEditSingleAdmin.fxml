@@ -17,7 +17,7 @@
 
 <AnchorPane prefHeight="779.0" prefWidth="1073.0" styleClass="bg-white" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.demo2.AdminEditSingleAdminController">
    <children>
-      <Pane layoutX="119.0" layoutY="207.0" prefHeight="489.0" prefWidth="857.0">
+      <Pane layoutX="119.0" layoutY="191.0" prefHeight="489.0" prefWidth="857.0">
          <children>
             <Line endX="752.0" layoutX="102.0" layoutY="49.0" opacity="0.32" startX="-100.0" stroke="#3964db8a" strokeWidth="2.0" />
             <Line endX="752.0" layoutX="101.0" layoutY="107.0" opacity="0.32" startX="-100.0" stroke="#3964db8a" strokeWidth="2.0" />
@@ -158,9 +158,9 @@
             </DropShadow>
          </effect>
       </Pane>
-      <Pane layoutX="55.0" layoutY="101.0" prefHeight="81.0" prefWidth="959.0">
+      <Pane layoutX="55.0" layoutY="96.0" prefHeight="81.0" prefWidth="959.0">
          <children>
-            <Button layoutX="25.0" layoutY="19.0" mnemonicParsing="false" onAction="#toAllAdmin" prefHeight="43.0" prefWidth="56.0" stylesheets="@css/blueButton.css" textFill="WHITE">
+            <Button layoutX="25.0" layoutY="19.0" mnemonicParsing="false" onAction="#toAllAdmin" prefHeight="43.0" prefWidth="56.0" stylesheets="@css/backButton.css" textFill="WHITE">
                <font>
                   <Font name="Leelawadee Bold" size="18.0" />
                </font>
@@ -175,7 +175,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Label layoutX="120.0" layoutY="28.0" text="Edit Admin Details" textFill="#2d55b9">
+            <Label layoutX="96.0" layoutY="28.0" text="Edit Admin Details" textFill="#2d55b9">
                <font>
                   <Font name="Leelawadee Bold" size="24.0" />
                </font>
@@ -184,6 +184,7 @@
          <styleClass>
             <String fx:value="bg-white" />
             <String fx:value="bg-rad-12" />
+            <String fx:value="card-border" />
          </styleClass>
          <effect>
             <DropShadow height="30.0" radius="14.5" width="30.0">
@@ -259,7 +260,7 @@
             </Button>
          </children>
       </Pane>
-      <Button layoutX="816.0" layoutY="718.0" mnemonicParsing="false" onAction="#updateAdmin" prefHeight="43.0" prefWidth="147.0" stylesheets="@css/blueButton.css" text="Update" textFill="WHITE">
+      <Button layoutX="816.0" layoutY="688.0" mnemonicParsing="false" onAction="#updateAdmin" prefHeight="43.0" prefWidth="147.0" stylesheets="@css/blueButton.css" text="Update" textFill="WHITE">
          <font>
             <Font name="Leelawadee Bold" size="18.0" />
          </font>
@@ -274,5 +275,36 @@
             </ImageView>
          </graphic>
       </Button>
+      <Pane layoutX="20.0" layoutY="756.0" prefHeight="43.0" prefWidth="1073.0" styleClass="bg-white" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+         <effect>
+            <DropShadow height="10.38" radius="3.5600000000000005" width="5.86">
+               <color>
+                  <Color opacity="0.5648854970932007" />
+               </color>
+            </DropShadow>
+         </effect>
+         <children>
+            <Label layoutX="29.0" layoutY="11.0" text="© 2023 RAU Hospitals. All rights reserved." textFill="#4070ff">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="712.0" layoutY="13.0" text="Contact Us             desk@rau.com           042 444 777 333" textFill="#5d6179">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="779.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/EmailLogo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="34.0" fitWidth="30.0" layoutX="900.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/PhoneLogo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>
