@@ -1,2 +1,2 @@
 # RauHospital
-A Small Hospital Management System
+A Small Hospital Management System as semester project
